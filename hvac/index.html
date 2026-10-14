@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copperline Heating &amp; Air — Demo Website | Greater Springfield Area</title>
+<meta name="description" content="Demo website for a fictional HVAC company, built to show the AI lead-capture chat experience. Company, prices and details are sample data.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Persistent demo ribbon -->
+<div class="demo-ribbon" role="note">
+  <strong>DEMO — fictional company, no real bookings</strong>
+</div>
+
+<header class="site-header" id="top">
+  <div class="wrap nav-row">
+    <a class="logo" href="#top" aria-label="Copperline Heating and Air — demo home">
+      <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#171a21" stroke="#e8a33d" stroke-width="2"/><path d="M24 11v9m0 0 6.5-3.7M24 20l-6.5-3.7M24 28v9m0 0 6.5 3.7M24 37l-6.5 3.7M31 17l7 2m-7-2-1.8-7M17 31l-7-2m7 2 1.8 7" stroke="#e8a33d" stroke-width="2.4" stroke-linecap="round" fill="none"/><circle cx="24" cy="24" r="3.2" fill="#f2f0eb"/></svg>
+      <span>Copperline<small>Heating &amp; Air · Demo</small></span>
+    </a>
+    <nav class="menu" id="menu" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#how">How It Works</a>
+      <a href="#area">Service Area</a>
+      <a href="#hours">Hours</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="nav-actions">
+      <span class="nav-phone">Demo line: <a href="tel:+15550142900">(555) 014-2900</a></span>
+      <button class="btn btn-amber" type="button" data-open-chat>Chat with the lead agent</button>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f2f0eb" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Fictional demo company · Greater Springfield Area</p>
+        <h1>Heating &amp; cooling, <em>booked in one short chat.</em></h1>
+        <p class="lead">This demo site shows how a local HVAC company's website can capture a complete lead — service, urgency, name, phone, and preferred callback time — through a website chat agent, without the visitor ever filling in a long form.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-amber btn-lg" type="button" data-open-chat>Try the demo lead agent</button>
+          <a class="btn btn-ghost btn-lg" href="#services">See demo services</a>
+        </div>
+        <ul class="hero-points">
+          <li>No account, no form — just chat</li>
+          <li>Urgent problems (no heat, no cooling, water leak) get flagged</li>
+          <li>In a live setup, the owner receives one clean lead summary</li>
+        </ul>
+      </div>
+      <aside class="hero-card" aria-label="Demo facts at a glance">
+        <h2>At a glance <span class="demo-chip">sample data</span></h2>
+        <dl>
+          <div><dt>Hours</dt><dd>Mon–Sat 8am–6pm</dd></div>
+          <div><dt>Service area</dt><dd>Greater Springfield Area</dd></div>
+          <div><dt>Diagnostic visit</dt><dd>Demo price — starts at $89</dd></div>
+          <div><dt>Emergency note</dt><dd>Outside regular hours, the demo emergency callback line is (555) 014-2900. For life-safety emergencies, call 911 first.</dd></div>
+        </dl>
+        <button class="btn btn-amber" type="button" data-open-chat style="width:100%;justify-content:center">Ask the agent a question</button>
+        <p class="fine">The chat agent answers only from this demo knowledge. Anything else, it passes to the owner with your lead.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Services</p>
+        <h2>What this demo company covers</h2>
+        <p>Five services — the same five the chat agent knows. Prices below are clearly-labelled demo ranges from the demo knowledge base, not quotes.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <h3>Heating repair</h3>
+          <p>Furnaces and heat pumps that stopped heating, short-cycle, or make new noises.</p>
+          <p class="range">Demo range: <b>$180–$650</b><span>typical repair range, after diagnosis</span></p>
+          <button class="btn btn-ghost" type="button" data-open-chat data-service="Heating repair">Ask about this</button>
+        </article>
+        <article class="card">
+          <h3>AC repair</h3>
+          <p>Air conditioning that is not cooling, blowing warm air, icing up, or not starting.</p>
+          <p class="range">Demo range: <b>$170–$620</b><span>typical repair range, after diagnosis</span></p>
+          <button class="btn btn-ghost" type="button" data-open-chat data-service="AC repair">Ask about this</button>
+        </article>
+        <article class="card">
+          <h3>Installations</h3>
+          <p>New furnace, AC, or heat-pump installations and full system replacements.</p>
+          <p class="range">Demo range: <b>$4,800–$9,500</b><span>typical full-system range; needs an in-home assessment</span></p>
+          <button class="btn btn-ghost" type="button" data-open-chat data-service="Installations">Ask about this</button>
+        </article>
+        <article class="card">
+          <h3>Maintenance plans</h3>
+          <p>Scheduled tune-ups and seasonal check-ups under a recurring maintenance plan.</p>
+          <p class="range">Demo price: <b>from $19/mo</b><span>starting plan price in this demo data</span></p>
+          <button class="btn btn-ghost" type="button" data-open-chat data-service="Maintenance plans">Ask about this</button>
+        </article>
+        <article class="card">
+          <h3>Duct cleaning</h3>
+          <p>Whole-home duct cleaning for dust build-up, odours, and airflow problems.</p>
+          <p class="range">Demo range: <b>$299–$499</b><span>typical whole-home range in this demo data</span></p>
+          <button class="btn btn-ghost" type="button" data-open-chat data-service="Duct cleaning">Ask about this</button>
+        </article>
+        <article class="card card-accent">
+          <h3>Not sure what's wrong?</h3>
+          <p>A diagnostic visit in this demo data starts at <b>$89</b>. Tell the agent what you're seeing — strange noises, weak airflow, a system that won't start — and it will note it for the owner.</p>
+          <button class="btn btn-amber" type="button" data-open-chat>Start a chat</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="how" class="band">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">How it works</p>
+        <h2>From first message to a lead the owner can act on</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="num">01</div><h3>Chat, don't fill forms</h3><p>The visitor describes the problem in their own words. The agent identifies the service and asks whether it's urgent — no heat, no cooling, or a water leak is flagged urgent automatically.</p></div>
+        <div class="step"><div class="num">02</div><h3>Questions answered on the spot</h3><p>Hours, service area, and demo pricing ranges are answered mid-chat from a fixed knowledge base, without losing the visitor's place. Anything outside it is passed to the owner — never guessed.</p></div>
+        <div class="step"><div class="num">03</div><h3>One clean summary</h3><p>The visitor confirms a summary card: service, urgency, name, phone, preferred callback time, and a timestamp. In a live setup, that summary goes straight to the owner's inbox.</p></div>
+      </div>
+      <div class="safety-note">
+        <h3>Safety comes before sales</h3>
+        <p>If a visitor mentions a gas smell, carbon monoxide, or sparking, the agent stops the booking flow immediately and tells them to leave the home and call 911 / their gas utility. Try typing <button type="button" class="inline-link" data-open-chat data-prefill="I smell gas in my basement">“I smell gas in my basement”</button> in the chat to see it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- AREA + HOURS -->
+  <section id="area">
+    <div class="wrap two-col">
+      <div class="panel">
+        <p class="eyebrow">Service area</p>
+        <h2>Serving the Greater Springfield Area</h2>
+        <p>In this demo data, Copperline serves Springfield and nearby communities within about 25 miles. The chat agent gives the same answer — and if you're not sure you qualify, it will pass the question to the owner with your lead rather than guess.</p>
+        <ul class="ticks">
+          <li>Springfield</li>
+          <li>Nearby communities within ~25 miles (demo data)</li>
+          <li>Outside that radius? Ask — the agent passes it to the owner</li>
+        </ul>
+      </div>
+      <div class="panel" id="hours">
+        <p class="eyebrow">Hours</p>
+        <h2>Mon–Sat 8am–6pm</h2>
+        <dl class="hours-list">
+          <div><dt>Monday – Friday</dt><dd>8:00am – 6:00pm</dd></div>
+          <div><dt>Saturday</dt><dd>8:00am – 6:00pm</dd></div>
+          <div><dt>Sunday</dt><dd>Closed (demo data)</dd></div>
+        </dl>
+        <p class="fine">Emergency note (demo data): outside regular hours, urgent no-heat / no-cooling issues can use the demo emergency callback line, (555) 014-2900. For any life-safety emergency — gas smell, carbon monoxide, fire — call 911 first.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="band">
+    <div class="wrap" style="max-width:840px">
+      <div class="sec-head"><p class="eyebrow">FAQ</p><h2>About this demo</h2></div>
+      <details><summary>Is Copperline a real company?</summary><p>No. Copperline Heating &amp; Air is a fictional company created for this demo. The phone number is a 555 demo number, and no real bookings are taken.</p></details>
+      <details><summary>Are the prices real quotes?</summary><p>No. Every price on this page and in the chat is a clearly-labelled demo range from a fixed sample knowledge base. The agent will never invent a price that isn't in that data, and an exact price in a live setup would only be set after a real diagnosis.</p></details>
+      <details><summary>Does the agent answer phone calls?</summary><p>No. This is a website chat demo only — there is no phone answering. The widget is labelled that way on purpose, so a client testing it sees exactly what the product does and doesn't do.</p></details>
+      <details><summary>What happens to a lead in a live setup?</summary><p>The visitor confirms a summary card in chat. In a live setup, that summary goes straight to the owner's inbox (this demo note is shown in the chat itself). In this static demo, nothing leaves your browser.</p></details>
+      <details><summary>What can I test in the chat?</summary><p>Book a repair start-to-finish; ask about prices, hours, or the service area mid-flow; say “no heat” to see the urgent flag; type an invalid phone number; ask “are you human?”; or mention a gas smell to see the safety stop.</p></details>
+    </div>
+  </section>
+
+  <!-- CHAT CTA -->
+  <section>
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>See the lead agent work</h2>
+          <p>Open the chat and run a full request — it takes about a minute, and the summary card at the end is exactly what the owner would receive.</p>
+        </div>
+        <button class="btn btn-amber btn-lg" type="button" data-open-chat>Open the demo chat</button>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-grid">
+    <div>
+      <b>Copperline Heating &amp; Air (fictional demo company)</b>
+      <p>Serving the Greater Springfield Area · Mon–Sat 8am–6pm · Demo line (555) 014-2900</p>
+    </div>
+    <div>
+      <b>Explore</b>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#area">Service Area</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div>
+      <b>Try in the chat</b>
+      <ul>
+        <li><button type="button" class="foot-link" data-open-chat data-prefill="My furnace stopped working and we have no heat">No-heat urgent lead</button></li>
+        <li><button type="button" class="foot-link" data-open-chat data-prefill="How much does AC repair cost?">Demo pricing question</button></li>
+        <li><button type="button" class="foot-link" data-open-chat data-prefill="Are you human?">“Are you human?”</button></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="fine foot-fine">Demo website built to show the lead-capture experience. Company, prices and details are sample data.</p>
+  </div>
+</footer>
+
+<!-- ============ CHAT WIDGET ============ -->
+<button id="chatLauncher" class="chat-launcher" type="button" aria-haspopup="dialog" aria-expanded="false">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#14100a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-8 8H4l2.3-2.9A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01" stroke-width="3"/></svg>
+  <span>Chat — demo lead agent</span>
+</button>
+
+<section id="chatPanel" class="chat-panel" role="dialog" aria-modal="false" aria-label="Demo lead agent chat" hidden>
+  <header class="chat-head">
+    <div>
+      <strong>Demo lead agent — website chat only (no phone answering)</strong>
+      <span>Copperline Heating &amp; Air · fictional demo · replies are scripted, no data leaves your browser</span>
+    </div>
+    <button id="chatClose" class="chat-close" type="button" aria-label="Close chat">×</button>
+  </header>
+  <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+  <div class="chat-quick" id="chatQuick">
+    <button type="button" data-quick="I need heating repair">Heating repair</button>
+    <button type="button" data-quick="My AC is not cooling">AC not cooling</button>
+    <button type="button" data-quick="How much does a diagnostic visit cost?">Demo prices</button>
+    <button type="button" data-quick="What are your hours?">Hours</button>
+  </div>
+  <form id="chatForm" class="chat-form">
+    <label class="sr-only" for="chatInput">Type your message</label>
+    <input id="chatInput" type="text" autocomplete="off" placeholder="Type a message…" maxlength="300">
+    <button class="btn btn-amber" type="submit">Send</button>
+  </form>
+</section>
+
+<script src="agent.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
