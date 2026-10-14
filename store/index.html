@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Willow Ember Candle Co. — Demo Storefront</title>
+<meta name="description" content="Fictional demo storefront with an embedded AI store assistant. No real orders.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="demo-ribbon" role="note">DEMO — fictional store, no real orders</div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#">Willow Ember <span>Candle Co.</span></a>
+    <button id="cart-open" class="cart-btn" type="button" aria-label="Open cart">
+      Cart <span class="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Small-batch home fragrance — demo catalogue</p>
+    <h1>Candles, diffusers &amp; quiet evenings.</h1>
+    <p class="hero-sub">Browse the sample catalogue, try the working demo cart (Candle Trio and GLOW10 rules included), and ask the assistant in the corner — it answers only from this store's own data, and says so when it doesn't know.</p>
+    <a class="hero-cta" href="#shop">Shop the demo catalogue</a>
+  </div>
+</section>
+
+<main class="wrap" id="shop">
+  <h2 class="section-title">The catalogue</h2>
+  <p class="section-sub">Seven sample products. Prices, sizes, burn times and scent notes are exactly as listed in the store's sample data — where the data is silent, so is this page.</p>
+
+  <div class="grid">
+
+    <article class="card">
+      <div class="card-art art-candle" aria-hidden="true">🕯️</div>
+      <h3>Cedar &amp; Sage Soy Candle</h3>
+      <p class="meta">8 oz · 8 oz jar only</p>
+      <p class="notes">Cedarwood, sage and amber.</p>
+      <p class="burn">Burn time: Approx. 45 hours</p>
+      <p class="price">$28.00 <s>$36.00</s></p>
+      <button class="add-btn" type="button" data-add="WEC-CED-8">Add to Cart</button>
+    </article>
+
+    <article class="card">
+      <div class="card-art art-candle" aria-hidden="true">🕯️</div>
+      <h3>Vanilla Ember Soy Candle</h3>
+      <p class="meta">8 oz · 8 oz jar only</p>
+      <p class="notes">Vanilla bean, smoked cedar and a little cinnamon</p>
+      <p class="burn">Burn time: Approx. 40 hours</p>
+      <p class="price">$26.00 <s>$34.00</s></p>
+      <button class="add-btn" type="button" data-add="WEC-VAN-8">Add to Cart</button>
+    </article>
+
+    <article class="card">
+      <div class="card-art art-diffuser" aria-hidden="true">🌿</div>
+      <h3>Fig &amp; Cassis Reed Diffuser</h3>
+      <p class="meta">120 ml · 120 ml bottle with reeds</p>
+      <p class="notes">Fig, cassis and green leaves. No flame.</p>
+      <p class="burn">Lasts 8–10 weeks</p>
+      <p class="price">$34.00 <s>$44.00</s></p>
+      <button class="add-btn" type="button" data-add="WEC-FIG-D">Add to Cart</button>
+    </article>
+
+    <article class="card">
+      <div class="card-art art-spray" aria-hidden="true">✦</div>
+      <h3>Linen &amp; Cotton Room Spray</h3>
+      <p class="meta">100 ml · 100 ml spray bottle</p>
+      <p class="notes">Scent notes aren't listed in the store's sample data yet — ask the assistant and it will tell you the same.</p>
+      <p class="price">$18.00 <s>$24.00</s></p>
+      <button class="add-btn" type="button" data-add="WEC-LIN-S">Add to Cart</button>
+    </article>
+
+    <article class="card">
+      <div class="card-art art-pillar" aria-hidden="true">🕯️</div>
+      <h3>Unscented Beeswax Pillar Candle</h3>
+      <p class="meta">3 × 6 inch pillar · Single pillar</p>
+      <p class="notes">Unscented, natural beeswax colour</p>
+      <p class="burn">Burn time: Approx. 60 hours</p>
+      <p class="price">$22.00</p>
+      <button class="add-btn" type="button" data-add="WEC-BEE-P">Add to Cart</button>
+    </article>
+
+    <article class="card">
+      <div class="card-art art-set" aria-hidden="true">🎁</div>
+      <h3>Mini Discovery Candle Set (4 × 2 oz)</h3>
+      <p class="meta">4 × 2 oz mini candles · Gift box</p>
+      <p class="notes">A seasonal assortment — the scents change with the season.</p>
+      <p class="burn">Burn time: Approx. 8 hours each</p>
+      <p class="price">$32.00 <s>$40.00</s></p>
+      <button class="add-btn" type="button" data-add="WEC-DIS-4">Add to Cart</button>
+    </article>
+
+    <article class="card">
+      <div class="card-art art-steamer" aria-hidden="true">🚿</div>
+      <h3>Eucalyptus Shower Steamers (4-pack)</h3>
+      <p class="meta">4 steamers · Pack of 4</p>
+      <p class="notes">Eucalyptus and menthol. For the shower, not a bath bomb.</p>
+      <p class="price">$19.00 <s>$25.00</s></p>
+      <button class="add-btn" type="button" data-add="WEC-EUC-4">Add to Cart</button>
+    </article>
+
+  </div>
+
+  <section class="policies">
+    <h2 class="section-title">Good to know</h2>
+    <div class="policy-grid">
+      <div class="policy"><h3>Shipping</h3><p>Standard shipping is $5.95 — free on subtotals of $50 or more. Orders pack and ship in 1–2 business days; delivery usually takes 4–7 business days after that, continental US only.</p></div>
+      <div class="policy"><h3>Returns</h3><p>Unopened products: return within 30 days of delivery with your receipt for a refund. Damaged on arrival? Email a photo within 7 days of delivery for a replacement or refund — your choice.</p></div>
+      <div class="policy"><h3>Discounts</h3><p>GLOW10 takes 10% off a first order. The Candle Trio takes 15% off full-size candles when you buy 3 or more. The two never combine — the better value applies.</p></div>
+      <div class="policy"><h3>Contact</h3><p>willowembercandle@gmail.com</p></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Demo storefront built to show the shopping + assistant experience. Products and policies are sample data.</p>
+  </div>
+</footer>
+
+<!-- Cart drawer -->
+<div id="cart-backdrop" class="backdrop" hidden></div>
+<aside id="cart-drawer" class="cart-drawer" hidden aria-label="Shopping cart">
+  <div class="cart-head">
+    <h2>Your cart (demo)</h2>
+    <button id="cart-close" type="button" aria-label="Close cart">✕</button>
+  </div>
+  <div id="cart-lines"></div>
+  <form id="code-form" class="code-form">
+    <label for="code-input">Discount code</label>
+    <div class="code-row">
+      <input id="code-input" type="text" placeholder="Try GLOW10" autocomplete="off">
+      <button type="submit">Apply</button>
+    </div>
+    <p id="code-msg" class="code-msg" role="status"></p>
+  </form>
+  <div class="totals">
+    <div class="trow"><span>Subtotal</span><span id="ct-subtotal">$0.00</span></div>
+    <div class="trow" id="ct-discount-row" hidden><span id="ct-discount-label">Discount</span><span id="ct-discount">−$0.00</span></div>
+    <div class="trow"><span>Standard shipping</span><span id="ct-shipping">—</span></div>
+    <p id="cart-hint" class="cart-hint" hidden></p>
+    <div class="trow grand"><span>Total</span><span id="ct-total">$0.00</span></div>
+  </div>
+  <button id="checkout-btn" class="checkout-btn" type="button">Checkout</button>
+  <p id="demo-notice" class="demo-notice" hidden>Demo checkout — this is a fictional store, so no payment is taken and no order is placed. In a live store this button would continue to secure checkout.</p>
+</aside>
+
+<!-- AI assistant widget -->
+<button id="assistant-toggle" class="assistant-toggle" type="button" aria-expanded="false" aria-controls="assistant-panel">💬 Ask the assistant</button>
+<section id="assistant-panel" class="assistant-panel" hidden aria-label="Demo store assistant">
+  <header class="assistant-head">
+    <strong>Demo assistant — answers from this demo store's data</strong>
+    <span>Willow Ember Candle Co.</span>
+  </header>
+  <div id="assistant-log" class="assistant-log" aria-live="polite"></div>
+  <div id="assistant-chips" class="assistant-chips">
+    <button type="button" data-q="Is shipping free?">Is shipping free?</button>
+    <button type="button" data-q="Can I return a burned candle?">Can I return a burned candle?</button>
+    <button type="button" data-q="Do codes stack?">Do codes stack?</button>
+    <button type="button" data-q="How long does the Cedar candle burn?">How long does the Cedar candle burn?</button>
+    <button type="button" data-q="How much is express shipping?">How much is express shipping?</button>
+    <button type="button" data-q="Do you offer gift wrapping?">Do you offer gift wrapping?</button>
+  </div>
+  <div id="assistant-lead" class="assistant-lead" hidden>
+    <form id="lead-form">
+      <label for="lead-email">Demo lead capture — leave your email to see how it works (nothing is sent or stored):</label>
+      <div class="code-row">
+        <input id="lead-email" type="email" placeholder="you@example.com" autocomplete="email">
+        <button type="submit">Send</button>
+      </div>
+    </form>
+  </div>
+  <form id="assistant-form" class="assistant-form">
+    <input id="assistant-input" type="text" placeholder="Ask about products, shipping, returns…" autocomplete="off" aria-label="Ask the assistant">
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<script src="kb.js"></script>
+<script src="app.js"></script>
+<script src="assistant.js"></script>
+</body>
+</html>
