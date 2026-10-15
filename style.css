@@ -212,6 +212,21 @@ h1{
 .colophon-body strong{color:var(--ink)}
 .colophon-set{margin-top:14px !important;font-family:var(--mono);font-size:.72rem !important;letter-spacing:.08em;color:var(--muted) !important}
 
+/* ---------- Order securely on Fiverr ---------- */
+.order-head{margin-top:0}
+.order-title{margin:30px 0 12px;font-size:clamp(1.8rem,3.6vw,2.6rem);line-height:1.06;letter-spacing:-.02em;font-weight:900}
+.order-lede{margin:0 0 28px;max-width:660px;font-size:1.06rem;line-height:1.6;color:var(--ink-soft)}
+.order-list{list-style:none;margin:0;padding:0;border-bottom:3px solid var(--ink)}
+.order-list li{
+  display:grid;grid-template-columns:1fr auto auto;gap:8px 40px;align-items:center;
+  padding:20px 0;border-top:1px solid var(--hair-dark);
+}
+.order-info h3{margin:0 0 5px;font-size:1.3rem;line-height:1.15;font-weight:900;letter-spacing:-.01em}
+.order-info p{margin:0;max-width:470px;font-size:.99rem;line-height:1.55;color:var(--ink-soft)}
+.order-price{font-family:var(--mono);font-size:.84rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+.order-link{text-decoration:none;white-space:nowrap}
+.order-link:hover{color:var(--vermilion)}
+
 /* ---------- Footer (disclaimers verbatim) ---------- */
 footer{border-top:1px solid var(--ink);padding:24px 0 38px;color:var(--muted);font-size:.92rem}
 footer p{margin:0 0 8px;max-width:820px}
@@ -233,6 +248,7 @@ footer p:last-child{font-family:var(--mono);font-size:.76rem;letter-spacing:.05e
   .exhibit-no{font-size:3.2rem}
   .demo-tag{margin-top:6px}
   .colophon{grid-template-columns:1fr;gap:10px;margin:40px 0 44px}
+  .order-list li{grid-template-columns:1fr;gap:6px;padding:18px 0}
   .nav{gap:8px 20px}
 }
 @media(prefers-reduced-motion:reduce){

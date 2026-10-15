@@ -150,6 +150,13 @@ html.stamp-watch .finding.stamped-in .badge{opacity:.94;transform:rotate(var(--r
 .crossref{border:1px dashed var(--ink-soft);padding:14px 17px;margin:16px 0;color:var(--ink-soft);font-size:.95rem}
 .crossref .lbl{color:var(--ink)}
 
+/* ---------- Order on Fiverr ---------- */
+.order-list{list-style:none;margin:16px 0 4px;padding:0;border-top:2px solid var(--ink)}
+.order-list li{display:flex;flex-wrap:wrap;gap:3px 20px;align-items:baseline;padding:11px 2px;border-bottom:1px solid var(--rule)}
+.order-name{flex:1 1 340px}
+.order-price{font-family:var(--mono);font-size:.8rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
+.order-list a{font-family:var(--mono);font-size:.8rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+
 /* ---------- Footer: colophon rule ---------- */
 footer{border-top:3px double var(--ink);padding:24px 0 38px;font-family:var(--mono);font-size:.84rem;color:var(--muted)}
 footer p{margin:6px 0}
