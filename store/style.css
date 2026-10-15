@@ -141,6 +141,7 @@ body{
   border:1px solid var(--line);border-radius:16px;overflow:hidden;
   box-shadow:0 24px 60px rgba(0,0,0,.55);
 }
+.assistant-panel[hidden]{display:none}
 .assistant-head{padding:14px 16px;background:var(--panel2);border-bottom:1px solid var(--line)}
 .assistant-head strong{display:block;font-size:.92rem}
 .assistant-head span{color:var(--muted);font-size:.8rem}
