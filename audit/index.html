@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SAMPLE AUDIT — Orrynx Shopify Store Audit (14 findings)</title>
 <meta name="description" content="A real sample audit of the author's own store Orrynx: 14 findings — 6 Blockers, 6 Fixes, 2 Polish — with evidence and fixes.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -384,5 +387,24 @@
 <p><a href="../">← Back to Demo Showcase home</a> · <a href="../store/">Demo store</a> · <a href="../hvac/">Demo HVAC site</a></p>
 </div></footer>
 <script src="app.js"></script>
+<script>
+(function () {
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("stamp-watch");
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("stamped-in");
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2, rootMargin: "0px 0px -6% 0px" });
+  Array.prototype.forEach.call(document.querySelectorAll(".finding"), function (finding) {
+    io.observe(finding);
+  });
+})();
+</script>
 </body>
 </html>
