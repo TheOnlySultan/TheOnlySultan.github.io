@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PolarFlow Heating, Cooling & Plumbing | 24/7 HVAC & Plumbers in Columbus, OH</title>
+<meta name="description" content="PolarFlow — same-day heating, cooling and plumbing service in Columbus. 24/7 emergency line, upfront flat-rate pricing, licensed techs.">
+<style>
+:root{
+  --navy:#0b2545; --navy2:#123a6b; --sky:#2ea8e0; --sky-l:#e8f5fc;
+  --red:#e4572e; --red-d:#c7431f; --bg:#f4f8fb; --card:#fff; --line:#dbe7ef;
+  --mut:#54687a; --radius:14px; --shadow:0 12px 28px rgba(11,37,69,.13);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--navy);background:var(--bg);line-height:1.55}
+svg{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:10px;padding:13px 22px;font-size:16px;cursor:pointer;border:0;transition:.2s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-d)}
+.btn-sky{background:var(--sky);color:#06283f}
+.btn-sky:hover{background:#57bde9}
+.btn-line{background:transparent;border:2px solid var(--navy);color:var(--navy)}
+.btn-line:hover{background:var(--navy);color:#fff}
+
+/* emergency ribbon */
+.ribbon{background:var(--red);color:#fff;font-size:14px;font-weight:600}
+.ribbon .wrap{display:flex;justify-content:space-between;gap:12px;padding:8px 20px;flex-wrap:wrap}
+.ribbon a{font-weight:800;text-decoration:underline}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:#fff;border-bottom:1px solid var(--line)}
+header.scrolled{box-shadow:0 6px 18px rgba(11,37,69,.12)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:11px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px}
+.logo small{display:block;font-size:10.5px;font-weight:700;color:var(--sky);letter-spacing:1.4px;text-transform:uppercase}
+.menu{display:flex;gap:24px;font-weight:600;font-size:15px}
+.menu a:hover{color:var(--sky)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:6px}
+.navphone{text-align:right}
+.navphone span{display:block;font-size:10.5px;color:var(--mut);font-weight:700;letter-spacing:1px;text-transform:uppercase}
+.navphone a{font-weight:800;font-size:18px}
+
+/* hero */
+.hero{background:linear-gradient(115deg,var(--navy) 58%,var(--navy2));color:#fff}
+.hero .wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:44px;padding:56px 20px 64px;align-items:start}
+.hero h1{font-size:42px;line-height:1.13;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--sky)}
+.hero .lead{margin:16px 0 22px;color:#c6d8ea;font-size:17.5px;max-width:480px}
+.badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.badge{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:6px 13px;font-size:13.5px;font-weight:600}
+.badge b{color:var(--sky)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.duo .d{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:16px}
+.duo .d h3{font-size:16.5px;margin-bottom:5px;display:flex;align-items:center;gap:8px}
+.duo .d p{font-size:13.5px;color:#b9cbdd}
+
+/* booking form */
+.book{background:#fff;color:var(--navy);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+.book h2{font-size:21px}
+.book p{font-size:14px;color:var(--mut);margin:3px 0 8px}
+.book label{font-size:13px;font-weight:700;display:block;margin:11px 0 5px}
+.book input,.book select,.book textarea{width:100%;padding:11px 12px;border:1.5px solid #cfdde8;border-radius:9px;font:inherit;font-size:15px;background:#fbfdfe}
+.book input:focus,.book select:focus,.book textarea:focus{outline:2px solid var(--sky);border-color:var(--sky)}
+.book .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.book button{width:100%;margin-top:17px;justify-content:center;font-size:17px}
+.book .fine{font-size:12px;color:var(--mut);text-align:center;margin-top:10px}
+.form-ok{display:none;background:#e7f6ee;border:1.5px solid #4da873;color:#1d5c38;border-radius:9px;padding:12px 14px;font-size:14.5px;margin-top:14px}
+
+/* strip */
+.strip{background:#fff;border-bottom:1px solid var(--line)}
+.strip .wrap{display:flex;justify-content:space-between;gap:16px;padding:16px 20px;flex-wrap:wrap}
+.strip .s{display:flex;gap:10px;align-items:center;font-size:14.5px}
+.strip .s b{display:block;font-size:15.5px}
+
+section{padding:66px 0}
+.sec-head{max-width:700px;margin-bottom:36px}
+.sec-head .tag{color:var(--red);font-weight:800;letter-spacing:1.6px;font-size:12.5px;text-transform:uppercase}
+.sec-head h2{font-size:32px;margin:8px 0 10px;line-height:1.2}
+.sec-head p{color:var(--mut);font-size:16.5px}
+
+/* two trade columns */
+.trades{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.trade{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.trade .th{padding:20px 24px;color:#fff;display:flex;align-items:center;gap:12px}
+.trade.heat .th{background:linear-gradient(100deg,#b23c17,var(--red))}
+.trade.cool .th{background:linear-gradient(100deg,var(--navy2),var(--sky))}
+.trade .th h3{font-size:21px}
+.trade .th span{font-size:13.5px;opacity:.9;display:block}
+.trade ul{padding:10px 24px 20px}
+.trade li{list-style:none;padding:12px 0;border-bottom:1px dashed var(--line);display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.trade li:last-child{border-bottom:0}
+.trade li b{font-size:15.5px}
+.trade li p{font-size:13.5px;color:var(--mut)}
+.trade li .from{font-weight:800;color:var(--navy);white-space:nowrap;font-size:14px}
+.trade .tf{padding:0 24px 22px}
+
+/* offer band */
+.offer{background:linear-gradient(100deg,#fdf0e9,#fde3d5);border:1px solid #f3c4a8;border-radius:var(--radius);padding:30px 34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.offer h3{font-size:25px;color:#8a2f10}
+.offer p{color:#7c4a33;font-size:15.5px;max-width:560px}
+.offer .save{font-size:15px;font-weight:800;background:#fff;border:1.5px dashed var(--red);color:var(--red-d);border-radius:10px;padding:10px 16px;white-space:nowrap}
+
+/* why us */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.why .w{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.why .w .ic{width:46px;height:46px;border-radius:11px;background:var(--sky-l);display:grid;place-items:center;margin-bottom:13px}
+.why h3{font-size:16.5px;margin-bottom:6px}
+.why p{font-size:14px;color:var(--mut)}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.plan{background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column}
+.plan.hot{border-color:var(--sky);box-shadow:var(--shadow);position:relative}
+.plan.hot:before{content:"MOST POPULAR";position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--sky);color:#06283f;font-size:11.5px;font-weight:800;letter-spacing:1px;padding:4px 12px;border-radius:999px}
+.plan h3{font-size:19px}
+.plan .amt{font-size:36px;font-weight:800;margin:8px 0 2px}
+.plan .amt span{font-size:15px;color:var(--mut);font-weight:600}
+.plan ul{margin:16px 0 22px;flex:1}
+.plan li{list-style:none;padding:6px 0;font-size:15px;display:flex;gap:9px}
+.plan li svg{flex:none;margin-top:4px}
+
+/* testimonials */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;border-top:4px solid var(--sky)}
+.testi .stars{color:#f5a623;font-size:17px;letter-spacing:2px;margin-bottom:10px}
+.testi p{font-size:15.5px;margin-bottom:14px}
+.testi b{font-size:14.5px}.testi span{display:block;color:var(--mut);font-size:13px}
+
+/* areas */
+.areas-sec{background:var(--navy);color:#dbe7f2}
+.areas-sec .sec-head h2{color:#fff}
+.areas-sec .sec-head p{color:#93aac2}
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 22px;font-size:15.5px}
+.area-grid li{list-style:none;padding:7px 0;border-bottom:1px dashed #274a73;display:flex;gap:8px;align-items:center}
+
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;font-size:16px}
+.faq p{color:var(--mut);margin-top:8px;font-size:15px}
+
+/* emergency strip */
+.emergency{background:#8f1d1d;color:#fff}
+.emergency .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.emergency b{font-size:16.5px}
+.emergency a{background:#fff;color:#8f1d1d;padding:9px 16px;border-radius:8px;font-weight:800;white-space:nowrap}
+/* proof band */
+.proof{background:#fff;border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:26px 20px;text-align:center}
+.proof .n{font-size:30px;font-weight:800;color:var(--navy)}
+.proof .n em{font-style:normal;color:var(--red)}
+.proof .l{font-size:13px;color:var(--mut)}
+/* before / after */
+.ba{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.ba .half{position:relative;min-height:290px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.ba .tag2{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.68);padding:5px 12px;border-radius:6px;font-weight:800;letter-spacing:1.2px;font-size:13px;z-index:2}
+.ba .cap{position:relative;padding:18px;background:linear-gradient(transparent,rgba(5,20,38,.88));width:100%}
+.ba .cap b{font-size:17px;display:block;margin-bottom:6px}
+.chip{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:3px 10px;font-size:12.5px;margin:0 5px 4px 0}
+/* about / owner */
+.about{display:grid;grid-template-columns:290px 1fr;gap:26px;align-items:start}
+.owner{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center}
+.owner b{display:block;font-size:17px;margin-top:12px}
+.owner span{color:var(--mut);font-size:13.5px}
+.owner .sig{font-family:Georgia,serif;font-style:italic;font-size:23px;margin-top:10px;color:var(--navy2)}
+.letter{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.letter p{margin-bottom:12px;color:#33475e;font-size:15.5px}
+.letter p:last-child{margin-bottom:0}
+/* financing band */
+.fin{background:var(--sky-l);border:1px solid #bfe3f4;border-radius:var(--radius);padding:26px 30px;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;margin-top:26px}
+.fin h3{font-size:22px;margin-bottom:4px}
+.fin p{color:#3d5a74;font-size:15px;max-width:620px}
+/* footer extras */
+.socials{display:flex;gap:10px;margin-top:16px}
+.socials a{width:37px;height:37px;border-radius:9px;background:#123a6b;display:grid;place-items:center}
+.socials a:hover{background:var(--sky)}
+.guarantees{margin-top:22px;font-size:14px;color:#c6d8ea}
+/* process */
+.process .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.process .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.process .step .num{font-size:34px;font-weight:800;color:var(--red)}
+.process .step h3{margin:8px 0;font-size:19px}
+.process .step p{color:var(--mut);font-size:15px}
+@media(max-width:960px){.process .steps{grid-template-columns:1fr}}
+/* cta band */
+.ctab{background:linear-gradient(100deg,#fdf0e9,#fde3d5);border:1px solid #f3c4a8;border-radius:var(--radius);padding:30px 34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:26px}
+.ctab h3{font-size:24px;color:#8a2f10}
+.ctab p{color:#7c4a33;font-size:15.5px}
+.mapbox{margin-top:26px;border:1px solid #274a73;border-radius:var(--radius);overflow:hidden;background:#0e2c4f}
+.mapbox .maphead{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:#0b2545;border-bottom:1px solid #274a73;font-weight:700;font-size:15px;color:#fff}
+.mapbox .maphead span{font-weight:600;color:#93aac2;font-size:13px}
+@media(max-width:960px){.nav .callbtn{display:none}}
+@media(max-width:600px){.proof .wrap{grid-template-columns:1fr 1fr}.ba{grid-template-columns:1fr}.about{grid-template-columns:1fr}}
+
+footer{background:#071c36;color:#8fa6bd;padding:44px 0 92px;font-size:14.5px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer b{color:#fff;display:block;margin-bottom:10px;font-size:15.5px}
+footer li{list-style:none;margin-bottom:6px}
+footer a:hover{color:var(--sky)}
+footer .fine{margin-top:26px;padding-top:18px;border-top:1px solid #1b365d;font-size:12.5px;color:#5f7a96}
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;background:#fff;border-top:1px solid var(--line);padding:10px 14px;gap:10px;box-shadow:0 -6px 18px rgba(11,37,69,.14)}
+.callbar a{flex:1;justify-content:center}
+
+@media(max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;padding:44px 20px 52px}
+  .hero h1{font-size:33px}
+  .trades{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr 1fr}
+  .plans,.testis{grid-template-columns:1fr}
+  .area-grid{grid-template-columns:1fr 1fr}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:16px 20px;gap:14px;border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(11,37,69,.12)}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .navphone{display:none}
+  footer .cols{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .duo,.book .row,.why{grid-template-columns:1fr}
+  .callbar{display:flex}
+  section{padding:50px 0}
+  .offer{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="ribbon">
+  <div class="wrap">
+    <div><b style="background:#fff;color:#c7431f;padding:1px 9px;border-radius:5px;letter-spacing:.6px">DEMO SAMPLE</b>&nbsp; 🚨 No heat? Burst pipe? We answer 24/7 — nights, weekends, holidays.</div>
+    <div>Emergency line: <a href="tel:+15550137729">(555) 013-7729</a></div>
+  </div>
+</div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="PolarFlow Heating, Cooling and Plumbing home">
+      <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" fill="#0b2545"/><path d="M24 10v10m0 0 7-4m-7 4-7-4m7 12v10m0 0 7 4m-7-4-7 4m13-13 8 2m-8-2-2-8m-6 10-8 2m8-2 2-8" stroke="#2ea8e0" stroke-width="2.6" stroke-linecap="round" fill="none" transform="translate(-1.5,0)"/><circle cx="24" cy="24" r="3.4" fill="#e4572e"/></svg>
+      <span>PolarFlow<small>Heating · Cooling · Plumbing</small></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#plans">Care Plans</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Service Area</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:14px">
+      <a class="btn btn-red callbtn" href="tel:+15550137729">📞 Call 24/7</a>
+      <a class="btn btn-sky" href="#book">Book Service</a>
+      <button class="burger" id="burger" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0b2545" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO + BOOKING FORM -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Heating, Cooling &amp; Plumbing in <em>Columbus, OH</em></h1>
+      <p class="lead">Heating, cooling and plumbing from one local team: same-day appointments, flat-rate prices quoted before we start, and a 2-year warranty on every repair.</p>
+      <div class="badges">
+        <span class="badge">★ <b>4.9</b> · 1,900+ reviews</span>
+        <span class="badge">Licensed OH #PF-8814</span>
+        <span class="badge">Background-checked techs</span>
+      </div>
+      <div class="duo">
+        <div class="d"><h3><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#e4572e" stroke-width="2.2"><path d="M12 3c1 4-3 5.5-3 9a3 3 0 0 0 6 0c0-1-.5-1.8-1-2.6 2.3 1.2 4 3.2 4 5.6A6 6 0 0 1 6 12c0-4 4-5.6 6-9z"/></svg>Heating emergency?</h3><p>Furnace out in January is our January specialty. Emergency crews on the road around the clock, every night of the year.</p></div>
+        <div class="d"><h3><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="2.2"><path d="M12 3c2.5 4.2 6 7.6 6 11a6 6 0 1 1-12 0c0-3.4 3.5-6.8 6-11z"/></svg>Plumbing problem?</h3><p>Leaks, clogs, water heaters and sump pumps — most plumbing calls finished the same visit, parts on the truck.</p></div>
+      </div>
+    </div>
+
+    <form class="book" id="book" novalidate>
+      <h2>Book a visit online</h2>
+      <p>Pick a slot — we confirm by text within 15 minutes (7am–10pm).</p>
+      <p style="color:#e4572e;font-weight:800;font-size:14.5px;margin:2px 0 6px">★★★★★ 4.9 · 1,900+ Google reviews</p>
+      <div class="row">
+        <div><label for="b-name">Full name *</label><input id="b-name" type="text" placeholder="Alex Carter" required></div>
+        <div><label for="b-phone">Mobile phone *</label><input id="b-phone" type="tel" placeholder="Your phone number" required></div>
+      </div>
+      <div class="row">
+        <div><label for="b-service">Service needed</label>
+          <select id="b-service">
+            <option>AC repair / not cooling</option>
+            <option>Furnace / heating repair</option>
+            <option>Leak or clogged drain</option>
+            <option>Water heater</option>
+            <option>Seasonal tune-up</option>
+            <option>New system quote</option>
+            <option>Other / not sure</option>
+          </select></div>
+        <div><label for="b-when">Preferred time</label>
+          <select id="b-when">
+            <option>As soon as possible</option>
+            <option>Today — morning</option>
+            <option>Today — afternoon</option>
+            <option>Tomorrow</option>
+            <option>This weekend</option>
+          </select></div>
+      </div>
+      <div class="row">
+        <div><label for="b-email">Email</label><input id="b-email" type="email" placeholder="you@email.com"></div>
+        <div><label for="b-emg">Is this an emergency?</label><select id="b-emg"><option>No — schedule normally</option><option>Yes — no heat</option><option>Yes — no AC</option><option>Yes — active leak / burst pipe</option></select></div>
+      </div>
+      <button class="btn btn-red" type="submit" style="margin-top:16px">Book My Visit →</button>
+      <div class="form-ok" id="formOk">You're booked in! We'll text your confirmation and your tech's name shortly.</div>
+      <p style="text-align:center;font-weight:700;font-size:14.5px;margin-top:12px">Upfront flat-rate price · 2-year warranty · Same-day slots daily</p>
+      <p class="fine">By submitting, you agree we may call or text you about your booking. Msg &amp; data rates may apply; reply STOP to opt out, HELP for help. Booking online is free — diagnosis is a flat $59, waived in full when you approve the repair, and you always approve the price before work begins.</p>
+    </form>
+  </div>
+</div>
+
+<!-- EMERGENCY STRIP -->
+<div class="emergency">
+  <div class="wrap"><b>🚨 No heat, no AC, or water where it shouldn't be?</b><a href="tel:+15550137729">Call (555) 013-7729 — 24/7</a></div>
+</div>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="s"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><div><b>Same-Day Service</b>Call before noon, tech today</div></div>
+    <div class="s"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="1.9"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><div><b>2-Year Warranty</b>On every repair we make</div></div>
+    <div class="s"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="1.9"><path d="M4 8h16M4 8v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8M4 8l1.5-4h13L20 8"/></svg><div><b>Flat-Rate Pricing</b>Quoted upfront, never hourly</div></div>
+    <div class="s"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="1.9"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><div><b>Local Columbus Crew</b>No call centers, no subcontractors</div></div>
+  </div>
+</div>
+
+<!-- PROOF NUMBERS -->
+<div class="proof">
+  <div class="wrap">
+    <div><div class="n">15 <em>yrs</em></div><div class="l">Serving Columbus — since 2011</div></div>
+    <div><div class="n">6,200+</div><div class="l">Jobs completed</div></div>
+    <div><div class="n">4.9 <em>★</em></div><div class="l">From 1,900+ Google reviews</div></div>
+    <div><div class="n">2 <em>yrs</em></div><div class="l">Warranty on every repair</div></div>
+  </div>
+</div>
+
+<!-- SERVICES: TWO TRADES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Services &amp; starting prices</span><h2>One call fixes the heat, the cold and the leak</h2><p>Transparent starting prices. Your tech confirms the exact flat rate on-site before work starts. Diagnosis is a flat $59 — waived in full when you approve the repair.</p></div>
+    <div class="trades">
+      <article class="trade cool">
+        <div class="th"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M12 2v20M4 6l16 12M20 6 4 18M12 2l-2 3m2-3 2 3M12 22l-2-3m2 3 2-3M4 6l3.4.6M4 6l.6 3.4M20 18l-3.4-.6m3.4.6-.6-3.4M20 6l-3.4.6M20 6l-.6 3.4M4 18l3.4-.6M4 18l.6-3.4"/></svg><div><h3>Heating &amp; Cooling</h3><span>Furnaces · AC · Heat pumps · Ducts</span></div></div>
+        <ul>
+          <li><div><b>AC repair &amp; recharge</b><p>Flat $59 diagnosis, waived with repair</p></div><span class="from">from $129</span></li>
+          <li><div><b>Furnace repair</b><p>Ignitors, blowers, boards — stocked on truck</p></div><span class="from">from $149</span></li>
+          <li><div><b>Seasonal tune-up (21-point)</b><p>Filter, coils, safety &amp; efficiency check</p></div><span class="from">$89</span></li>
+          <li><div><b>New AC or furnace install</b><p>Free in-home sizing &amp; written quote</p></div><span class="from">from $4,980</span></li>
+          <li><div><b>Duct cleaning &amp; sealing</b><p>Whole-home, before/after camera check</p></div><span class="from">from $399</span></li>
+        </ul>
+        <div class="tf"><a class="btn btn-sky" href="#book" style="width:100%;justify-content:center">Book HVAC Service</a></div>
+      </article>
+      <article class="trade heat">
+        <div class="th"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M14.7 6.3a4.5 4.5 0 0 1 6-5.4L17.5 4l2.1 2.1 3.2-3.2a4.5 4.5 0 0 1-5.7 6L8.6 17.4a2.1 2.1 0 0 1-3 0L4.2 16a2.1 2.1 0 0 1 0-3z" transform="scale(.9) translate(1,1)"/></svg><div><h3>Plumbing</h3><span>Leaks · Drains · Water heaters · Remodel rough-in</span></div></div>
+        <ul>
+          <li><div><b>Drain clearing</b><p>Camera inspection included on main lines</p></div><span class="from">from $99</span></li>
+          <li><div><b>Leak detection &amp; repair</b><p>Acoustic + thermal imaging pinpointing</p></div><span class="from">from $139</span></li>
+          <li><div><b>Water heater install</b><p>Tank &amp; tankless, permits handled by us</p></div><span class="from">from $1,450</span></li>
+          <li><div><b>Sump pump &amp; backup</b><p>Battery backups that survive outages</p></div><span class="from">from $349</span></li>
+          <li><div><b>Fixture install</b><p>Faucets, toilets, disposals — same visit</p></div><span class="from">from $119</span></li>
+        </ul>
+        <div class="tf"><a class="btn btn-red" href="#book" style="width:100%;justify-content:center">Book a Plumber</a></div>
+      </article>
+    </div>
+
+    <div class="offer" style="margin-top:26px">
+      <div><h3>Fall furnace tune-up — $89, was $139</h3><p>21-point safety and efficiency check before the first freeze. Includes carbon-monoxide test and a written health report on your system.</p></div>
+      <div class="save">SAVE $50</div>
+    </div>
+    <div class="fin">
+      <div><h3>New system? From $83/month</h3><p>Full AC or furnace replacements from $4,980 — or spread it over 60 months at $83/mo with 0% APR on approved credit ($83 × 60 = $4,980 — nothing extra). Every quote shows the cash price and the monthly price side by side.</p></div>
+      <a class="btn btn-red" href="#book">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Why PolarFlow</span><h2>The crew Columbus calls twice — once, then forever</h2></div>
+    <div class="why">
+      <div class="w"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#123a6b" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 5-5.5 8-5.5s6.5 1.5 8 5.5"/></svg></div><h3>Techs, not salespeople</h3><p>Our techs are paid hourly, never on commission — so the recommendation is the repair you need, not the one that pays best.</p></div>
+      <div class="w"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#123a6b" stroke-width="2"><path d="M5 4h14v16H5z"/><path d="M9 9h6M9 13h6M9 17h4"/></svg></div><h3>Price before work</h3><p>You sign off on one flat number. If the job changes, we stop and re-quote first. No hourly meter running in your driveway.</p></div>
+      <div class="w"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#123a6b" stroke-width="2"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>2-year warranty</h3><p>Every repair is covered for two full years, parts and labor. If it fails, we come back and make it right — free.</p></div>
+      <div class="w"><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#123a6b" stroke-width="2"><path d="M4 5h16M4 12h16M4 19h10"/></svg></div><h3>Text updates</h3><p>Booking confirmation, tech photo and arrival window by text. You'll never wonder where your plumber is.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Before &amp; after</span><h2>A furnace swap in Grove City</h2><p>Real job notes, photographed by the installing tech — the same before/after photos you receive with every install.</p></div>
+    <div class="ba">
+      <div class="half" style="background:linear-gradient(165deg,#6e6259,#4c423b 65%,#332c26)">
+        <span class="tag2">BEFORE</span>
+        <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0" aria-hidden="true">
+          <rect x="235" y="80" width="130" height="180" rx="6" fill="#5d4f42"/>
+          <rect x="255" y="105" width="90" height="55" rx="4" fill="#41362c"/>
+          <circle cx="300" cy="205" r="17" fill="#2f2822"/>
+          <path d="M300 80V35" stroke="#8a7a68" stroke-width="14"/>
+          <path d="M250 245q25-12 50 0t50 0" stroke="#7c4a2d" stroke-width="5" fill="none"/>
+        </svg>
+        <div class="cap"><b>22-year-old furnace</b><span class="chip">January 2026</span><span class="chip">80% efficiency</span><span class="chip">Cracked heat exchanger</span><span style="display:block;font-style:italic;margin-top:4px">"It quit on the coldest night of the year." — the homeowner</span></div>
+      </div>
+      <div class="half" style="background:linear-gradient(165deg,#1c4d7d,#0b2545 65%,#071c36)">
+        <span class="tag2" style="background:var(--red)">AFTER</span>
+        <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0" aria-hidden="true">
+          <rect x="235" y="80" width="130" height="180" rx="6" fill="#d7e3ee"/>
+          <rect x="255" y="105" width="90" height="55" rx="4" fill="#2ea8e0"/>
+          <circle cx="300" cy="205" r="17" fill="#0b2545"/>
+          <path d="M300 80V35" stroke="#9fc3dd" stroke-width="14"/>
+          <rect x="262" y="238" width="76" height="10" rx="5" fill="#57bde9"/>
+        </svg>
+        <div class="cap"><b>New high-efficiency furnace</b><span class="chip">Installed January 2026</span><span class="chip">96% efficiency</span><span class="chip">10-yr parts warranty</span><span style="display:block;font-style:italic;margin-top:4px">"Heat was back before dinner." — Dan P., Grove City</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process" style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">How it works</span><h2>Fixed in 3 steps — no surprises</h2><p>From booking to warranty paperwork, you always know the price and what happens next.</p></div>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Book in 2 minutes</h3><p>Book online or call 24/7. You get a text confirmation, your tech's name and photo, and a 2-hour arrival window.</p></div>
+      <div class="step"><div class="num">02</div><h3>Approve one flat price</h3><p>Your tech diagnoses the problem ($59 flat, waived when you approve the repair) and shows you one exact price before any work starts.</p></div>
+      <div class="step"><div class="num">03</div><h3>Fixed &amp; warrantied</h3><p>Most repairs finish the same visit, from parts stocked on the truck. Every repair is covered by our 2-year warranty, with the paperwork in your inbox.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANS -->
+<section id="plans" style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">PolarCare plans</span><h2>Members skip the line — and the big repair bills</h2><p>Every plan includes scheduled tune-ups and discounts on every repair — pick the coverage level that fits your home. Cancel anytime.</p></div>
+    <div class="plans">
+      <div class="plan"><h3>Essential</h3><div class="amt">$14<span>/mo</span></div><p style="color:var(--mut);font-size:14.5px">For one system, peace of mind basics.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>1 tune-up per year</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>10% off repairs</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Reminder scheduling for you</li>
+        </ul><a class="btn btn-line" href="#book" style="justify-content:center">Start Essential</a></div>
+      <div class="plan hot"><h3>Comfort</h3><div class="amt">$24<span>/mo</span></div><p style="color:var(--mut);font-size:14.5px">Full heating + cooling coverage.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>2 tune-ups per year (heat + AC)</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>15% off all repairs</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Priority same-day booking</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>No overtime fees, ever</li>
+        </ul><a class="btn btn-sky" href="#book" style="justify-content:center">Start Comfort</a></div>
+      <div class="plan"><h3>Total Home</h3><div class="amt">$39<span>/mo</span></div><p style="color:var(--mut);font-size:14.5px">HVAC + plumbing, one plan.</p>
+        <ul>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Everything in Comfort</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Annual plumbing inspection</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Free drain clearing yearly</li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2ea8e0" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>20% off repairs &amp; installs</li>
+        </ul><a class="btn btn-line" href="#book" style="justify-content:center">Start Total Home</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews" style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Customer reviews</span><h2>1,900+ Columbus neighbors, warm and dry</h2></div>
+    <div class="testis">
+      <article class="testi"><div class="stars">★★★★★</div><p>"Furnace died on the coldest night of the year. PolarFlow answered at 11pm and had heat back by breakfast. The flat price never changed."</p><b>Greg H.</b><span>Furnace repair · Dublin</span></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>"They texted me a photo of my tech before he arrived — as a single mom, that matters. Drain cleared, price matched the website, zero upsell."</p><b>Alisha M.</b><span>Drain clearing · Westerville</span></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>"Two other companies said 'replace the whole AC.' PolarFlow replaced a capacitor for $180 and it's run perfectly for a year. Honest folks."</p><b>Tom &amp; Rita W.</b><span>AC repair · Grove City</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / OWNER -->
+<section id="about" style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">About us</span><h2>Family-owned, technician-led, Columbus-proud</h2></div>
+    <div class="about">
+      <div class="owner">
+        <svg width="120" height="120" viewBox="0 0 120 120" style="margin:0 auto" aria-hidden="true"><circle cx="60" cy="60" r="58" fill="#e8f5fc"/><circle cx="60" cy="48" r="19" fill="#8a5a3b"/><path d="M22 108c5-24 20-34 38-34s33 10 38 34" fill="#123a6b"/><path d="M40 33a20 12 0 0 1 40 0l-2 4H42z" fill="#e4572e"/></svg>
+        <b>Mike O'Connell</b>
+        <span>Founder &amp; master technician</span>
+        <div class="sig">Mike O'Connell</div>
+      </div>
+      <div class="letter">
+        <p>"I spent 12 years turning wrenches for the big franchise shops before starting PolarFlow in 2011. I left because I was tired of being paid to sell people systems they didn't need. Our techs are paid by the hour, never on commission — when we say a $180 part fixes it, that's because it does."</p>
+        <p>"Every price is quoted flat before we start, every repair carries two years of warranty, and my name is on the truck. If we ever get it wrong, you call the number on this page and it rings my team — not a call center."</p>
+        <p><b>Licensed, Bonded &amp; Insured — Ohio License #PF-8814.</b> All technicians are licensed, background-checked and drive stocked PolarFlow trucks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="areas-sec" id="areas">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Service area</span><h2>Serving greater Columbus within the hour</h2><p>Headquartered in Worthington with techs staged across the metro — that's how same-day actually happens.</p></div>
+    <ul class="area-grid">
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Columbus</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Dublin</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Westerville</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Worthington</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Grove City</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Hilliard</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Reynoldsburg</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Gahanna</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Upper Arlington</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Pickerington</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Powell</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#2ea8e0"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Canal Winchester</li>
+    </ul>
+    <!-- Coverage map (in live client builds this slot holds the interactive Google Maps embed) -->
+    <div class="mapbox">
+      <div class="maphead">📍 Coverage map — greater Columbus <span>HQ: Worthington · tap a pin on the live site to get directions</span></div>
+      <svg viewBox="0 0 1160 260" width="100%" height="220" role="img" aria-label="Stylized coverage map of the greater Columbus service area">
+        <rect width="1160" height="260" fill="#0e2c4f"/>
+        <g stroke="#1d4a75" stroke-width="10"><path d="M0 70 H1160M0 150 H1160M0 225 H1160M140 0 V260M360 0 V260M600 0 V260M830 0 V260M1030 0 V260"/></g>
+        <g stroke="#173d63" stroke-width="3"><path d="M0 110 H1160M0 190 H1160M250 0 V260M480 0 V260M720 0 V260M940 0 V260"/></g>
+        <path d="M540 0 C 560 80, 520 160, 565 260" stroke="#2b6ea6" stroke-width="16" fill="none" opacity=".55"/>
+        <g font-family="Segoe UI,Arial" font-size="14" fill="#dbe7f2">
+          <g><path d="M600 116c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#e4572e"/><circle cx="600" cy="119" r="5" fill="#fff"/><text x="636" y="124" font-weight="700">Columbus</text></g>
+          <g><path d="M480 40c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#2ea8e0"/><circle cx="480" cy="43" r="5" fill="#fff"/><text x="420" y="30" font-weight="700">★ Worthington (HQ)</text></g>
+          <g><path d="M360 62c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#2ea8e0"/><circle cx="360" cy="65" r="5" fill="#fff"/><text x="316" y="52">Dublin</text></g>
+          <g><path d="M830 62c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#2ea8e0"/><circle cx="830" cy="65" r="5" fill="#fff"/><text x="842" y="52">Westerville</text></g>
+          <g><path d="M360 196c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#2ea8e0"/><circle cx="360" cy="199" r="5" fill="#fff"/><text x="300" y="238">Grove City</text></g>
+          <g><path d="M940 176c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#2ea8e0"/><circle cx="940" cy="179" r="5" fill="#fff"/><text x="880" y="216">Reynoldsburg</text></g>
+        </g>
+      </svg>
+    </div>
+    <div class="ctab">
+      <div><h3>Not sure what's wrong?</h3><p>Book a diagnosis — $59 flat, waived in full when you approve the repair. You'll know the exact price before we touch a thing.</p></div>
+      <a class="btn btn-red" href="#book">Book a Diagnosis</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-head"><span class="tag">Good questions</span><h2>Before you book</h2></div>
+    <details><summary>Do you really charge flat rates?</summary><p>Yes. Diagnosis is a flat $59, waived in full when you approve the repair. After diagnosing, your tech shows you one exact price for the full job — approve it and we start; decline it and the $59 diagnosis fee is all you pay.</p></details>
+    <details><summary>How fast can you get here?</summary><p>Book before noon and we'll offer same-day slots. Emergencies (no heat under 40°, active leaks, sewage) jump the queue 24/7.</p></details>
+    <details><summary>Are your techs licensed and insured?</summary><p>Every tech is licensed in Ohio, background-checked, drug-tested and drives a stocked PolarFlow truck. License #PF-8814, fully insured.</p></details>
+    <details><summary>What does the 2-year warranty cover?</summary><p>Parts and labor on the repair we performed. If the same issue returns within two years, the fix is free.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <b>PolarFlow Heating, Cooling &amp; Plumbing</b>
+        <p>Same-day HVAC and plumbing for greater Columbus. Licensed OH #PF-8814, insured, locally owned.</p>
+        <p style="margin-top:10px">Open 24/7 for emergencies · Office Mon–Sat 7am–8pm<br>88 Commerce St, Worthington, OH 43085 (sample address)</p>
+        <div class="socials">
+          <a href="#top" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M14 8h3V4.5h-3c-2.2 0-4 1.8-4 4V11H7v3.5h3V22h3.5v-7.5h3l.5-3.5h-3.5V8.7c0-.4.3-.7.5-.7z"/></svg></a>
+          <a href="#top" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="#fff" stroke="none"/></svg></a>
+          <a href="#top" aria-label="Google reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg></a>
+        </div>
+        <p class="guarantees"><b style="color:#fff">Our guarantees:</b> 2-year warranty on every repair · Flat-rate price approved by you before work starts · On-time arrival or your $59 diagnosis fee is waived.</p>
+      </div>
+      <div><b>Services</b><ul>
+        <li><a href="#services">AC &amp; Furnace Repair</a></li><li><a href="#services">Tune-Ups</a></li>
+        <li><a href="#services">Drain Clearing</a></li><li><a href="#services">Water Heaters</a></li><li><a href="#plans">Care Plans</a></li></ul></div>
+      <div><b>Contact</b><ul>
+        <li><a href="tel:+15550137729">(555) 013-7729</a></li>
+        <li><a href="#book">Book online</a></li>
+        <li><a href="#areas">Service area</a></li>
+        <li><a href="#reviews">Reviews</a></li></ul></div>
+    </div>
+    <p class="fine">© 2026 PolarFlow Heating, Cooling &amp; Plumbing — DEMO SAMPLE WEBSITE built to showcase a contractor website design. Business details, reviews, prices and statistics shown are illustrative samples, not a real company.</p>
+  </div>
+</footer>
+
+<div class="callbar">
+  <a class="btn btn-red" href="tel:+15550137729">📞 Call 24/7</a>
+  <a class="btn btn-sky" href="#book">Book Online</a>
+</div>
+
+<script>
+var hdr=document.getElementById('hdr');
+addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>8)},{passive:true});
+var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',function(){menu.classList.toggle('open')});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
+document.getElementById('book').addEventListener('submit',function(e){
+  e.preventDefault();
+  var name=document.getElementById('b-name'),phone=document.getElementById('b-phone'),email=document.getElementById('b-email'),ok=true;
+  [name,phone].forEach(function(f){
+    var bad=!f.value.trim()||(f===phone&&f.value.replace(/\D/g,'').length<7);
+    f.style.borderColor=bad?'#d64545':'';
+    if(bad)ok=false;
+  });
+  if(email.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
+    email.style.borderColor='#d64545';ok=false;
+  } else { email.style.borderColor=''; }
+  if(!ok)return;
+  document.getElementById('formOk').style.display='block';
+  this.querySelector('button[type=submit]').textContent='Visit Booked ✓';
+});
+</script>
+</body>
+</html>

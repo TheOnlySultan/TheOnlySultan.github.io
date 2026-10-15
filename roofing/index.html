@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summit Peak Roofing Co. | Roof Replacement & Repair in the Denver Metro</title>
+<meta name="description" content="Summit Peak Roofing Co. — roof replacement, repair and storm damage restoration. Free inspections, written quotes within 24 hours.">
+<style>
+:root{
+  --ink:#1d2733; --ink2:#2c3a49; --paper:#f7f4ef; --card:#ffffff;
+  --amber:#f59e0b; --amber-d:#d97706; --line:#e5ded2; --mut:#5c6a77;
+  --radius:14px; --shadow:0 10px 30px rgba(29,39,51,.12);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",system-ui,-apple-system,Arial,sans-serif;color:var(--ink);background:var(--paper);line-height:1.55}
+img,svg{display:block;max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:10px;padding:13px 22px;font-size:16px;cursor:pointer;border:0;transition:.2s}
+.btn-call{background:var(--amber);color:#231a04}
+.btn-call:hover{background:var(--amber-d);color:#fff}
+.btn-ghost{background:transparent;border:2px solid #fff;color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:var(--ink2)}
+
+/* top strip */
+.topstrip{background:var(--ink);color:#e9e2d4;font-size:13.5px}
+.topstrip .wrap{display:flex;justify-content:space-between;gap:14px;padding-top:7px;padding-bottom:7px;flex-wrap:wrap}
+.topstrip b{color:var(--amber)}
+.topstrip a{font-weight:700;color:#fff}
+
+/* header */
+header{position:sticky;top:0;z-index:60;background:rgba(247,244,239,.97);border-bottom:1px solid var(--line)}
+header.scrolled{box-shadow:0 6px 18px rgba(29,39,51,.12)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;letter-spacing:.2px}
+.logo small{display:block;font-size:11px;font-weight:600;color:var(--mut);letter-spacing:1.6px;text-transform:uppercase}
+.menu{display:flex;gap:26px;font-weight:600;font-size:15px}
+.menu a:hover{color:var(--amber-d)}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:6px}
+.headcta{display:flex;align-items:center;gap:14px}
+.headphone{font-weight:800;font-size:17px}
+.headphone span{display:block;font-size:11px;color:var(--mut);font-weight:600;letter-spacing:1px;text-transform:uppercase}
+
+/* hero */
+.hero{background:linear-gradient(120deg,#141c26 55%,#27364a);color:#fff;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(115deg,transparent 0 46px,rgba(255,255,255,.028) 46px 48px);}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;padding:64px 20px 72px;align-items:start}
+.kicker{display:inline-block;background:rgba(245,158,11,.16);color:#ffc95e;border:1px solid rgba(245,158,11,.45);padding:5px 12px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.4px;margin-bottom:16px}
+.hero h1{font-size:44px;line-height:1.12;font-weight:800}
+.hero h1 em{font-style:normal;color:var(--amber)}
+.hero p.lead{margin:18px 0 26px;font-size:18px;color:#d7dee7;max-width:520px}
+.hero-points{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-bottom:30px;font-size:15px}
+.hero-points li{list-style:none;display:flex;gap:9px;align-items:flex-start}
+.hero-points svg{flex:none;margin-top:3px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.ratingline{margin-top:20px;font-size:14px;color:#c8d2dd}
+.ratingline b{color:#ffc95e}
+
+/* quote card */
+.quote{background:#fff;color:var(--ink);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px}
+.quote h2{font-size:21px;margin-bottom:4px}
+.quote p{font-size:14px;color:var(--mut);margin-bottom:16px}
+.quote label{font-size:13px;font-weight:700;display:block;margin:12px 0 5px}
+.quote input,.quote select,.quote textarea{width:100%;padding:11px 12px;border:1.5px solid #d9d2c4;border-radius:9px;font:inherit;font-size:15px;background:#fdfcf9}
+.quote input:focus,.quote select:focus,.quote textarea:focus{outline:2px solid var(--amber);border-color:var(--amber)}
+.quote .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.quote button{width:100%;margin-top:18px;justify-content:center;font-size:17px}
+.quote .fine{font-size:12px;color:var(--mut);text-align:center;margin-top:10px}
+.form-ok{display:none;background:#e8f7ec;border:1.5px solid #57ab6d;color:#205c31;border-radius:9px;padding:12px 14px;font-size:14.5px;margin-top:14px}
+
+/* trust strip */
+.trust{background:#fff;border-bottom:1px solid var(--line)}
+.trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding:22px 20px}
+.trust .t{display:flex;gap:12px;align-items:center}
+.trust .t b{display:block;font-size:15.5px}
+.trust .t span{font-size:13px;color:var(--mut)}
+
+section{padding:70px 0}
+.sec-head{max-width:680px;margin-bottom:38px}
+.sec-head .tag{color:var(--amber-d);font-weight:800;letter-spacing:1.6px;font-size:12.5px;text-transform:uppercase}
+.sec-head h2{font-size:33px;margin:8px 0 10px;line-height:1.2}
+.sec-head p{color:var(--mut);font-size:16.5px}
+
+/* services */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:.2s}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.card .ic{width:52px;height:52px;border-radius:12px;background:#fdf1dc;display:grid;place-items:center;margin-bottom:16px}
+.card h3{font-size:19px;margin-bottom:8px}
+.card p{color:var(--mut);font-size:15px;margin-bottom:14px}
+.card a{font-weight:700;color:var(--amber-d);font-size:14.5px}
+.card .price{font-size:13px;font-weight:700;color:var(--ink);background:#f3eee2;border-radius:6px;padding:3px 8px;display:inline-block;margin-bottom:12px}
+
+/* process */
+.process{background:var(--ink);color:#eef2f6}
+.process .sec-head h2{color:#fff}
+.process .sec-head p{color:#aeb9c6}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{border:1px solid #37485c;border-radius:var(--radius);padding:26px;background:#232f3e}
+.step .num{font-size:34px;font-weight:800;color:var(--amber)}
+.step h3{margin:8px 0;font-size:19px;color:#fff}
+.step p{color:#aeb9c6;font-size:15px}
+
+/* gallery / project visual */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.panel{border-radius:var(--radius);overflow:hidden;position:relative;min-height:300px;color:#fff;display:flex;align-items:flex-end}
+.panel .cap{position:relative;padding:22px;background:linear-gradient(transparent,rgba(10,15,22,.82));width:100%}
+.panel .cap b{font-size:19px}
+.panel .cap span{display:block;font-size:14px;color:#cfd8e2}
+
+/* testimonials */
+.testis{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px}
+.testi .stars{color:var(--amber);font-size:17px;letter-spacing:2px;margin-bottom:10px}
+.testi p{font-size:15.5px;margin-bottom:14px}
+.testi b{font-size:14.5px}
+.testi span{display:block;color:var(--mut);font-size:13px}
+
+/* areas */
+.areas{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.area-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px 22px;font-size:15.5px}
+.area-grid li{list-style:none;padding:7px 0;border-bottom:1px dashed #e8e1d2;display:flex;gap:8px;align-items:center}
+.area-grid svg{flex:none}
+
+/* faq + cta */
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;font-size:16px}
+.faq p{color:var(--mut);margin-top:8px;font-size:15px}
+.cta-band{background:linear-gradient(110deg,var(--amber-d),var(--amber));border-radius:var(--radius);padding:36px;display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap;color:#231a04;margin-top:46px}
+.cta-band h3{font-size:26px;line-height:1.25}
+.cta-band p{font-size:15.5px;opacity:.85}
+
+footer{background:#141c26;color:#aeb9c6;padding:46px 0 90px;font-size:14.5px}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer b{color:#fff;display:block;margin-bottom:10px;font-size:15.5px}
+footer a:hover{color:var(--amber)}
+footer li{list-style:none;margin-bottom:6px}
+footer .fine{margin-top:26px;padding-top:18px;border-top:1px solid #2b394b;font-size:12.5px;color:#76879a}
+
+/* emergency strip */
+.emergency{background:#8f1d1d;color:#fff}
+.emergency .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;padding-top:12px;padding-bottom:12px;flex-wrap:wrap}
+.emergency b{font-size:16.5px}
+.emergency a{background:#fff;color:#8f1d1d;padding:9px 16px;border-radius:8px;font-weight:800;white-space:nowrap}
+/* proof band */
+.proof{background:#fff;border-bottom:1px solid var(--line)}
+.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:26px 20px;text-align:center}
+.proof .n{font-size:30px;font-weight:800;color:var(--amber-d)}
+.proof .l{font-size:13px;color:var(--mut)}
+/* before / after */
+.ba{display:grid;grid-template-columns:1fr 1fr;border-radius:var(--radius);overflow:hidden;margin-bottom:22px;border:1px solid var(--line)}
+.ba .half{position:relative;min-height:290px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.ba .tag2{position:absolute;top:14px;left:14px;background:rgba(0,0,0,.68);padding:5px 12px;border-radius:6px;font-weight:800;letter-spacing:1.2px;font-size:13px;z-index:2}
+.ba .cap{position:relative;padding:18px;background:linear-gradient(transparent,rgba(10,15,22,.88));width:100%}
+.ba .cap b{font-size:17px;display:block;margin-bottom:6px}
+.chip{display:inline-block;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.45);border-radius:999px;padding:3px 10px;font-size:12.5px;margin:0 5px 4px 0}
+/* about / owner */
+.about{display:grid;grid-template-columns:290px 1fr;gap:26px;align-items:start}
+.owner{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center}
+.owner b{display:block;font-size:17px;margin-top:12px}
+.owner span{color:var(--mut);font-size:13.5px}
+.owner .sig{font-family:Georgia,serif;font-style:italic;font-size:23px;margin-top:10px;color:var(--ink2)}
+.letter{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+.letter p{margin-bottom:12px;color:#33414f;font-size:15.5px}
+.letter p:last-child{margin-bottom:0}
+/* financing band */
+.fin{background:#fdf1dc;border:1px solid #f3d191;border-radius:var(--radius);padding:26px 30px;display:flex;justify-content:space-between;gap:18px;align-items:center;flex-wrap:wrap;margin-top:26px}
+.fin h3{font-size:22px;margin-bottom:4px}
+.fin p{color:#6b5a33;font-size:15px;max-width:620px}
+/* footer extras */
+.socials{display:flex;gap:10px;margin-top:16px}
+.socials a{width:37px;height:37px;border-radius:9px;background:#232f3e;display:grid;place-items:center}
+.socials a:hover{background:var(--amber-d)}
+.guarantees{margin-top:22px;font-size:14px;color:#d7dee7}
+.mapbox{margin-top:26px;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#eef2ea}
+.mapbox .maphead{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:#fff;border-bottom:1px solid var(--line);font-weight:700;font-size:15px}
+.mapbox .maphead span{font-weight:600;color:var(--mut);font-size:13px}
+@media(max-width:960px){.headcta .callbtn{display:none}}
+@media(max-width:600px){.proof .wrap{grid-template-columns:1fr 1fr}.ba{grid-template-columns:1fr}.about{grid-template-columns:1fr}}
+
+/* sticky mobile call bar */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;background:#fff;border-top:1px solid var(--line);padding:10px 14px;gap:10px;box-shadow:0 -6px 18px rgba(29,39,51,.12)}
+.callbar a{flex:1;justify-content:center}
+
+@media(max-width:960px){
+  .hero .wrap{grid-template-columns:1fr;padding:46px 20px 54px}
+  .hero h1{font-size:34px}
+  .cards,.steps,.testis{grid-template-columns:1fr 1fr}
+  .trust .wrap{grid-template-columns:1fr 1fr}
+  .area-grid{grid-template-columns:1fr 1fr}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;padding:16px 20px;gap:14px;border-bottom:1px solid var(--line);box-shadow:0 14px 24px rgba(29,39,51,.12)}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .headphone{display:none}
+  .split{grid-template-columns:1fr}
+  footer .cols{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .cards,.steps,.testis{grid-template-columns:1fr}
+  .hero-points{grid-template-columns:1fr}
+  .quote .row{grid-template-columns:1fr}
+  .callbar{display:flex}
+  .cta-band{padding:26px}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<div class="topstrip">
+  <div class="wrap">
+    <div><b style="background:#f59e0b;color:#231a04;padding:1px 9px;border-radius:5px;letter-spacing:.6px">DEMO SAMPLE</b>&nbsp; Serving the <b>Denver Metro</b> — Free roof inspections this week</div>
+    <div>Mon–Sat 7am–7pm · <a href="tel:+15550134471">(555) 013-4471</a></div>
+  </div>
+</div>
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a class="logo" href="#top" aria-label="Summit Peak Roofing Co. home">
+      <svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 26 24 8l20 18v4L24 14 4 30z" fill="#f59e0b"/><path d="M12 30h24v12H12z" fill="#1d2733"/><path d="M20 42V33h8v9" fill="#f59e0b"/></svg>
+      <span>Summit Peak<small>Roofing Co.</small></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#services">Services</a>
+      <a href="#process">How It Works</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#areas">Service Area</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="headcta">
+      <a class="btn btn-dark callbtn" href="tel:+15550134471">📞 (555) 013-4471</a>
+      <a class="btn btn-call" href="#quote">Get My Free Quote</a>
+      <button class="burger" id="burger" aria-label="Open menu">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#1d2733" stroke-width="2.4" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO + QUOTE FORM -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="kicker">★ Rated 4.9 by Denver homeowners</span>
+      <h1>Roof Replacement &amp; Repair in the <em>Denver Metro</em></h1>
+      <p class="lead">Roof replacement, repairs and storm-damage restoration done by a local, licensed crew. You get a written, line-by-line quote within 24 hours — no pressure, no surprises.</p>
+      <ul class="hero-points">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Licensed &amp; insured in Colorado</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>25-year warranty on new roofs · 5-year on repairs</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>Most replacements done in 1–2 days</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6.5"/></svg>We handle insurance paperwork</li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn btn-call" href="tel:+15550134471">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#231a04"><path d="M6.6 3.2c.3-.6 1-.9 1.7-.7l1.9.6c.7.2 1.1 1 1 1.7L10.6 8c1.3 2.4 3 4.1 5.4 5.4l3.2-.6c.7-.1 1.5.3 1.7 1l.6 1.9c.2.7-.1 1.4-.7 1.7C19.6 21 16 22 12 22 5.4 22 2 18.6 2 12c0-4 1-7.6 2.6-8.8z" transform="scale(.92) translate(1,1)"/></svg>
+          Call (555) 013-4471</a>
+        <a class="btn btn-ghost" href="#services">See Services</a>
+      </div>
+      <p class="ratingline"><b>★★★★★ 4.9</b> · 480+ local roofs completed · A+ BBB rating</p>
+    </div>
+
+    <form class="quote" id="quote" novalidate>
+      <h2>Get a free, written quote</h2>
+      <p>We reply within one business hour, Mon–Sat.</p>
+      <p style="color:#d97706;font-weight:800;font-size:14.5px;margin:-6px 0 6px">★★★★★ 4.9 · 312 Google reviews</p>
+      <div class="row">
+        <div><label for="q-name">Full name *</label><input id="q-name" name="name" type="text" placeholder="Jane Miller" required></div>
+        <div><label for="q-phone">Phone *</label><input id="q-phone" name="phone" type="tel" placeholder="Your phone number" required></div>
+      </div>
+      <div class="row">
+        <div><label for="q-email">Email</label><input id="q-email" name="email" type="email" placeholder="you@email.com"></div>
+        <div><label for="q-urgent">Is this an emergency?</label><select id="q-urgent" name="urgency"><option>No — planning ahead</option><option>Yes — active leak</option><option>Yes — storm damage</option></select></div>
+      </div>
+      <label for="q-service">What do you need?</label>
+      <select id="q-service" name="service">
+        <option>Free roof inspection</option>
+        <option>Full roof replacement</option>
+        <option>Leak / roof repair</option>
+        <option>Storm or hail damage</option>
+        <option>Gutters &amp; drainage</option>
+        <option>Not sure — advise me</option>
+      </select>
+      <button class="btn btn-call" type="submit">Request My Free Quote →</button>
+      <div class="form-ok" id="formOk">Thanks! Your request is in — we'll call you shortly to schedule your free inspection.</div>
+      <p style="text-align:center;font-weight:700;font-size:14.5px;margin-top:12px">Free estimate · No obligation · Written quote within 24 hours</p>
+      <p class="fine">By submitting, you agree we may call or text you about your request. Msg &amp; data rates may apply; reply STOP to opt out, HELP for help. No spam — your details go only to our estimating team.</p>
+    </form>
+  </div>
+</div>
+
+<!-- EMERGENCY STRIP -->
+<div class="emergency">
+  <div class="wrap"><b>🚨 Active leak or storm damage? We tarp same-day, Mon–Sat.</b><a href="tel:+15550134471">Call (555) 013-4471</a></div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <div class="t"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.8"><path d="M12 3l7 3v5c0 4.6-3 8.4-7 10-4-1.6-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg><div><b>Licensed &amp; Insured</b><span>CO license #SP-2041 · $2M liability</span></div></div>
+    <div class="t"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><div><b>24-Hour Quotes</b><span>Written estimate within one day</span></div></div>
+    <div class="t"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.8"><path d="M12 3v18M7 8c0-2 2.2-3 5-3s5 1 5 3-2 2.6-5 3.4S7 13 7 15c0 2 2.2 3 5 3s5-1 5-3"/></svg><div><b>Financing Available</b><span>0% APR plans, from $115/mo</span></div></div>
+    <div class="t"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="1.8"><path d="M4 20V10l8-6 8 6v10h-6v-6H10v6z"/></svg><div><b>Locally Owned</b><span>Denver crew — never subcontracted</span></div></div>
+  </div>
+</div>
+
+<!-- PROOF NUMBERS -->
+<div class="proof">
+  <div class="wrap">
+    <div><div class="n">16 yrs</div><div class="l">In business — since 2010</div></div>
+    <div><div class="n">480+</div><div class="l">Roofs completed locally</div></div>
+    <div><div class="n">4.9 ★</div><div class="l">From 312 Google reviews</div></div>
+    <div><div class="n">25 yrs</div><div class="l">Warranty on replacements</div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">What we do</span>
+      <h2>Roofing services that end the leak — and the worry</h2>
+      <p>Every job starts with a free inspection and photos of what we find. You approve the written quote before a single shingle comes off.</p>
+    </div>
+    <div class="cards">
+      <article class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M3 11 12 4l9 7M6 10v9h12v-9"/></svg></div><span class="price">From $6,900</span><h3>Roof Replacement</h3><p>Full tear-off and re-roof with architectural shingles, metal or tile. Includes underlayment, ventilation check and full cleanup with magnetic nail sweep.</p><a href="#quote">Get a replacement quote →</a></article>
+      <article class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M14.5 6.5a4 4 0 0 1 5.6-4L17 5.6l2.4 2.4 3.1-3.1a4 4 0 0 1-5.4 5.6L8 19.6a2 2 0 0 1-2.8 0l-1.4-1.4a2 2 0 0 1 0-2.8z" transform="scale(.92) translate(1,0)"/></svg></div><span class="price">From $349</span><h3>Leak &amp; Roof Repair</h3><p>Flashing, vents, missing shingles, mystery drips — we find the real source, fix it once, and back the repair with a 5-year leak warranty.</p><a href="#quote">Book a repair visit →</a></article>
+      <article class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M7 15a5 5 0 1 1 .9-9.9A6 6 0 0 1 19 7a4 4 0 0 1-1 7.9M12 12v8m0 0-3-3m3 3 3-3"/></svg></div><span class="price">Free inspection</span><h3>Storm &amp; Hail Damage</h3><p>Colorado hail is brutal. We document all damage with photos, meet your adjuster on-site and restore the roof your policy covers.</p><a href="#quote">Schedule storm inspection →</a></article>
+      <article class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M3 8h18M5 8v4a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V8M12 16v5"/></svg></div><span class="price">From $1,150</span><h3>Gutters &amp; Drainage</h3><p>Seamless aluminum gutters, leaf guards and downspout rerouting that move water away from your foundation for good.</p><a href="#quote">Get a gutter quote →</a></article>
+      <article class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><span class="price">Always free</span><h3>21-Point Inspection</h3><p>Drone photos, attic moisture check and an honest report: repair now, watch it, or replace later. No upsell — the photos speak.</p><a href="#quote">Book my free inspection →</a></article>
+      <article class="card"><div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M4 19 19 4M4 4h6M4 4v6M20 20h-6m6 0v-6"/></svg></div><span class="price">From $11,500</span><h3>Metal Roofing</h3><p>Standing-seam metal rated for 140 mph winds and 50+ year life. The last roof most of our metal customers ever buy.</p><a href="#quote">Ask about metal →</a></article>
+    </div>
+    <div class="fin">
+      <div><h3>A new roof from $115/month</h3><p>Full replacements start at $6,900 — or spread it over 60 months at $115/mo with 0% APR on approved credit ($115 × 60 = $6,900 — nothing extra). Your written quote shows the cash price and the monthly price side by side, so you can decide with real numbers.</p></div>
+      <a class="btn btn-dark" href="#quote">See My Options</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">How it works</span><h2>From first call to final cleanup in 3 steps</h2><p>No chasing contractors, no vague timelines. You always know what's next.</p></div>
+    <div class="steps">
+      <div class="step"><div class="num">01</div><h3>Free inspection</h3><p>We climb up (and send the drone), photograph everything, and show you exactly what your roof needs — and what it doesn't.</p></div>
+      <div class="step"><div class="num">02</div><h3>Written quote in 24h</h3><p>One line-by-line price that doesn't change mid-job. Financing and insurance options explained in plain English.</p></div>
+      <div class="step"><div class="num">03</div><h3>Install in 1–2 days</h3><p>Our own crew installs, protects your landscaping, and leaves the yard cleaner than we found it. Warranty paperwork in your inbox the same week.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / OWNER -->
+<section id="about" style="padding-top:60px">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">About us</span><h2>The roofer your neighbors actually recommend</h2></div>
+    <div class="about">
+      <div class="owner">
+        <svg width="120" height="120" viewBox="0 0 120 120" style="margin:0 auto" aria-hidden="true"><circle cx="60" cy="60" r="58" fill="#fdf1dc"/><circle cx="60" cy="48" r="19" fill="#c98d4e"/><path d="M22 108c5-24 20-34 38-34s33 10 38 34" fill="#2c3a49"/><path d="M38 34 60 20l22 14-6 5L60 29 44 39z" fill="#f59e0b"/></svg>
+        <b>Dan Whitaker</b>
+        <span>Founder &amp; owner-operator</span>
+        <div class="sig">Dan Whitaker</div>
+      </div>
+      <div class="letter">
+        <p>"I started Summit Peak in 2010 with a ladder, a pickup, and one rule: show the homeowner the photos and tell the truth about what the roof actually needs. Sixteen years later we still work that way — most weeks, I'm the one on the roof doing your inspection."</p>
+        <p>"If your roof has five good years left, I'll tell you to keep your money. If a storm did real damage, I'll stand next to your insurance adjuster and make sure it's documented right. Either way, you get the photos and a written quote that doesn't change."</p>
+        <p><b>Licensed, Bonded &amp; Insured — Colorado License #SP-2041 · $2M liability coverage.</b> Every crew member is our own employee — we never hand your home to a subcontractor we've never met.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS (CSS/SVG visual panels) -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Before &amp; after</span><h2>What a Summit Peak job looks like</h2><p>Every project is photographed before, during and after — the same photos go in your inspection report.</p></div>
+    <div class="ba">
+      <div class="half" style="background:linear-gradient(165deg,#7a6a58,#57493a 65%,#3e3428)">
+        <span class="tag2">BEFORE</span>
+        <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0" aria-hidden="true">
+          <path d="M50 216 300 96l250 120v14L300 112 50 230z" fill="#4a3d2f"/>
+          <g fill="#66553f"><rect x="150" y="176" width="52" height="26" rx="3"/><rect x="330" y="150" width="46" height="24" rx="3"/><rect x="420" y="182" width="58" height="26" rx="3"/></g>
+          <g stroke="#2e2620" stroke-width="3" stroke-dasharray="10 8"><path d="M120 208 480 128"/></g>
+          <path d="M250 60l14 26h-28z" fill="#c9b892"/>
+        </svg>
+        <div class="cap"><b>Hail-damaged shingle roof — Aurora</b><span class="chip">Inspected May 2026</span><span class="chip">Shingles 14 years old</span><span class="chip">2 active leaks</span><span style="display:block;font-style:italic;margin-top:4px">"Water was coming through the kitchen light." — the homeowner</span></div>
+      </div>
+      <div class="half" style="background:linear-gradient(165deg,#3c5a78,#22374e 65%,#182635)">
+        <span class="tag2" style="background:var(--amber-d)">AFTER</span>
+        <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0" aria-hidden="true">
+          <path d="M50 216 300 96l250 120v14L300 112 50 230z" fill="#f59e0b"/>
+          <path d="M120 222h360v52H120z" fill="#10161f"/>
+          <path d="M120 222h360l-180-88z" fill="#2e4358"/>
+          <g stroke="#47617c" stroke-width="2"><path d="M160 208 440 124M190 218 415 136"/></g>
+          <rect x="276" y="226" width="48" height="48" fill="#f59e0b"/>
+        </svg>
+        <div class="cap"><b>New architectural shingle roof</b><span class="chip">Completed June 2026</span><span class="chip">Done in 2 days</span><span class="chip">Class-4 impact shingles</span><span class="chip">25-yr warranty</span><span style="display:block;font-style:italic;margin-top:4px">"They showed us photos at every step." — the homeowner</span></div>
+      </div>
+    </div>
+    <div class="split">
+      <div class="panel" style="background:linear-gradient(160deg,#3c5a78,#22374e 60%,#182635)">
+        <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0" aria-hidden="true">
+          <path d="M40 210 300 84l260 126v18L300 106 40 228z" fill="#f59e0b"/>
+          <path d="M110 218h380v56H110z" fill="#10161f"/>
+          <path d="M110 218h380l-190-92z" fill="#2e4358"/>
+          <g stroke="#47617c" stroke-width="2"><path d="M150 205 450 118M170 218 430 130M200 226 405 142"/></g>
+          <rect x="272" y="222" width="56" height="52" fill="#f59e0b"/>
+        </svg>
+        <div class="cap"><b>Full Replacement — Highlands Ranch</b><span>Architectural shingles · 2,400 sq ft · Completed August 2026 in 2 days</span><span style="display:block;font-style:italic;margin-top:4px">"Done in two days, and the yard was spotless." — the homeowner</span></div>
+      </div>
+      <div class="panel" style="background:linear-gradient(160deg,#6b4f2e,#42301a 60%,#2a1f10)">
+        <svg width="100%" height="100%" viewBox="0 0 600 300" preserveAspectRatio="xMidYMax slice" style="position:absolute;inset:0" aria-hidden="true">
+          <path d="M40 214 300 96l260 118v16L300 114 40 230z" fill="#e8e3d8"/>
+          <path d="M120 222h360v52H120z" fill="#191410"/>
+          <g stroke="#8a7a5c" stroke-width="2"><path d="M140 214h320M160 224h280M185 234h230"/></g>
+          <rect x="278" y="226" width="44" height="48" fill="#e8e3d8"/>
+        </svg>
+        <div class="cap"><b>Standing-Seam Metal — Boulder</b><span>Charcoal metal · Snow guards · Completed September 2026 · 50-year material warranty</span><span style="display:block;font-style:italic;margin-top:4px">"Our heating bills dropped the first winter." — the homeowner</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="reviews" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Homeowner reviews</span><h2>Neighbors who stopped worrying about their roof</h2></div>
+    <div class="testis">
+      <article class="testi"><div class="stars">★★★★★</div><p>"After the June hail storm, Summit Peak met our insurance adjuster, handled everything, and the new roof was on in two days. Yard was spotless after."</p><b>Marlene T.</b><span>Roof replacement · Aurora</span></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>"Three companies quoted me. Summit Peak was the only one who showed me drone photos and told me half the 'damage' didn't need fixing. Honest people."</p><b>Devon R.</b><span>Inspection &amp; repair · Littleton</span></article>
+      <article class="testi"><div class="stars">★★★★★</div><p>"Leak over our nursery at 9pm, crew at the door next morning, fixed by lunch. The 24-hour written quote is real — final bill matched it to the dollar."</p><b>Priya &amp; Sam K.</b><span>Leak repair · Lakewood</span></article>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+<section class="areas" id="areas">
+  <div class="wrap">
+    <div class="sec-head"><span class="tag">Service area</span><h2>Proudly roofing the Denver metro</h2><p>Based in Lakewood, on a roof near you within 48 hours. Don't see your town? Call — we often travel further for full replacements.</p></div>
+    <ul class="area-grid">
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Denver</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Aurora</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Lakewood</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Arvada</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Littleton</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Highlands Ranch</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Westminster</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Boulder</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Centennial</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Golden</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Parker</li>
+      <li><svg width="15" height="15" viewBox="0 0 24 24" fill="#d97706"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11zm0-9.5A2.5 2.5 0 1 0 12 6a2.5 2.5 0 0 0 0 5.5z"/></svg>Thornton</li>
+    </ul>
+
+    <!-- Coverage map (in live client builds this slot holds the interactive Google Maps embed) -->
+    <div class="mapbox">
+      <div class="maphead">📍 Coverage map — Denver metro <span>HQ: Lakewood · tap a pin on the live site to get directions</span></div>
+      <svg viewBox="0 0 1160 260" width="100%" height="220" role="img" aria-label="Stylized coverage map of the Denver metro service area">
+        <rect width="1160" height="260" fill="#eef2ea"/>
+        <g stroke="#ffffff" stroke-width="10"><path d="M0 70 H1160M0 150 H1160M0 225 H1160M140 0 V260M360 0 V260M600 0 V260M830 0 V260M1030 0 V260"/></g>
+        <g stroke="#d8dfd2" stroke-width="3"><path d="M0 110 H1160M0 190 H1160M250 0 V260M480 0 V260M720 0 V260M940 0 V260"/></g>
+        <path d="M0 245 C 300 190, 520 250, 780 205 S 1080 165, 1160 190 L1160 260 L0 260 Z" fill="#cfe0ee"/>
+        <g font-family="Segoe UI,Arial" font-size="14" fill="#41505e">
+          <g><path d="M600 96c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#d97706"/><circle cx="600" cy="99" r="5" fill="#fff"/><text x="636" y="104" font-weight="700">Denver</text></g>
+          <g><path d="M830 136c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#1d2733"/><circle cx="830" cy="139" r="5" fill="#fff"/><text x="866" y="144">Aurora</text></g>
+          <g><path d="M360 156c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#1d2733"/><circle cx="360" cy="159" r="5" fill="#fff"/><text x="300" y="200" font-weight="700">★ Lakewood (HQ)</text></g>
+          <g><path d="M250 56c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#1d2733"/><circle cx="250" cy="59" r="5" fill="#fff"/><text x="262" y="46">Arvada</text></g>
+          <g><path d="M480 206c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#1d2733"/><circle cx="480" cy="209" r="5" fill="#fff"/><text x="492" y="232">Littleton</text></g>
+          <g><path d="M140 40c-8-11-24-11-24 3 0 10 24 26 24 26s24-16 24-26c0-14-16-14-24-3z" fill="#1d2733"/><circle cx="140" cy="43" r="5" fill="#fff"/><text x="96" y="30">Boulder →</text></g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="cta-band">
+      <div><h3>Not sure what your roof needs?</h3><p>The inspection is free and the photos are yours either way.</p></div>
+      <a class="btn btn-dark" href="#quote">Book My Free Inspection</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap" style="max-width:820px">
+    <div class="sec-head"><span class="tag">Good questions</span><h2>Before you call</h2></div>
+    <details><summary>How much does a new roof cost?</summary><p>Most Denver-metro replacements land between $6,900 and $14,500 depending on size, pitch and material. Your written quote is exact — the price we quote is the price you pay.</p></details>
+    <details><summary>Will insurance cover my storm damage?</summary><p>Often, yes. We document everything with photos, meet your adjuster on the roof, and make sure nothing is missed. You only pay your deductible if the claim is approved.</p></details>
+    <details><summary>How long does a replacement take?</summary><p>Most homes are finished in 1–2 days, including tear-off and cleanup. Weather delays happen in Colorado — we'll always tell you the day before, not the morning of.</p></details>
+    <details><summary>What warranty do I get?</summary><p>Two written warranties: a new roof carries our 25-year workmanship warranty plus the manufacturer's material warranty (25 years to lifetime depending on shingle); repairs carry a 5-year leak warranty. Both are in writing and transferable if you sell.</p></details>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <b>Summit Peak Roofing Co.</b>
+        <p>Roof replacement, repair and storm restoration for the Denver metro. Locally owned, licensed &amp; insured (CO #SP-2041).</p>
+        <p style="margin-top:10px">Mon–Sat 7am–7pm<br>1420 Wadsworth Blvd, Lakewood, CO 80215 (sample address)</p>
+        <div class="socials">
+          <a href="#top" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M14 8h3V4.5h-3c-2.2 0-4 1.8-4 4V11H7v3.5h3V22h3.5v-7.5h3l.5-3.5h-3.5V8.7c0-.4.3-.7.5-.7z"/></svg></a>
+          <a href="#top" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3.5" y="3.5" width="17" height="17" rx="4.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.2" fill="#fff" stroke="none"/></svg></a>
+          <a href="#top" aria-label="Google reviews"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M12 2l2.9 6.3 6.9.7-5.2 4.6 1.5 6.8L12 16.9 5.9 20.4l1.5-6.8L2.2 9l6.9-.7z"/></svg></a>
+        </div>
+        <p class="guarantees"><b style="color:#fff;display:inline">Our guarantees:</b> 25-year warranty on replacements · 5-year on repairs · Written quotes that never change mid-job · Full cleanup, guaranteed.</p>
+      </div>
+      <div><b>Services</b><ul>
+        <li><a href="#services">Roof Replacement</a></li><li><a href="#services">Leak Repair</a></li>
+        <li><a href="#services">Storm Damage</a></li><li><a href="#services">Gutters</a></li><li><a href="#services">Metal Roofing</a></li></ul></div>
+      <div><b>Contact</b><ul>
+        <li><a href="tel:+15550134471">(555) 013-4471</a></li>
+        <li><a href="#quote">Request a quote</a></li>
+        <li><a href="#areas">Service area</a></li>
+        <li><a href="#reviews">Reviews</a></li></ul></div>
+    </div>
+    <p class="fine">© 2026 Summit Peak Roofing Co. — DEMO SAMPLE WEBSITE built to showcase a contractor website design. Business details, reviews and statistics shown are illustrative samples, not a real company.</p>
+  </div>
+</footer>
+
+<!-- sticky mobile call bar -->
+<div class="callbar">
+  <a class="btn btn-call" href="tel:+15550134471">📞 Call Now</a>
+  <a class="btn btn-dark" href="#quote">Free Quote</a>
+</div>
+
+<script>
+// sticky header shadow
+var hdr=document.getElementById('hdr');
+addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>8)},{passive:true});
+// mobile menu
+var burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',function(){menu.classList.toggle('open')});
+menu.addEventListener('click',function(e){if(e.target.tagName==='A')menu.classList.remove('open')});
+// quote form validation + success state (demo: no server)
+document.getElementById('quote').addEventListener('submit',function(e){
+  e.preventDefault();
+  var name=document.getElementById('q-name'),phone=document.getElementById('q-phone'),email=document.getElementById('q-email'),ok=true;
+  [name,phone].forEach(function(f){
+    var bad=!f.value.trim()||(f===phone&&f.value.replace(/\D/g,'').length<7);
+    f.style.borderColor=bad?'#d64545':'';
+    if(bad)ok=false;
+  });
+  if(email.value.trim()&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){
+    email.style.borderColor='#d64545';ok=false;
+  } else { email.style.borderColor=''; }
+  if(!ok)return;
+  document.getElementById('formOk').style.display='block';
+  this.querySelector('button[type=submit]').textContent='Request Received ✓';
+});
+</script>
+</body>
+</html>
