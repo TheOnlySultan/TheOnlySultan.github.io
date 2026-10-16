@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAMPLE AUDIT — Orrynx Shopify Store Audit (14 findings)</title>
-<meta name="description" content="A real sample audit of the author's own store Orrynx: 14 findings — 6 Blockers, 6 Fixes, 2 Polish — with evidence and fixes.">
+<title>SAMPLE AUDIT — Sample Shopify Store Audit (14 findings)</title>
+<meta name="description" content="A real sample audit of a live Shopify store: 14 findings — 6 Blockers, 6 Fixes, 2 Polish — with evidence and fixes. A Mainly Web Studio work sample.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -43,17 +43,17 @@
 <!-- ===== HEADER BLOCK ===== -->
 <section class="sample-banner" id="setup">
 <p class="kicker">SAMPLE AUDIT</p>
-<p class="big">This is a real audit of my own store (Orrynx), published as a work sample — findings left in, including the embarrassing ones.</p>
-<p class="muted">SAMPLE — Shopify Store Audit Report · Audit of my own store, published as a work sample. I would rather show you a real audit with real defects than a polished fake. Every storefront finding below was re-verified on the live store on the audit date. Where a check needed store-owner access (inventory, discount list), it is dated and marked as such.</p>
+<p class="big">This is a real audit of a live Shopify store, published as a work sample — findings left in, including the uncomfortable ones.</p>
+<p class="muted">SAMPLE — Shopify Store Audit Report · A real audit of a live store, published as a work sample by Mainly Web Studio. We would rather show you a real audit with real defects than a polished fake. Every storefront finding below was re-verified on the live store on the audit date. Where a check needed backend access (inventory, discount list), it is dated and marked as such.</p>
 </section>
 
 <dl class="facts">
-<div><dt>Store audited</dt><dd>Orrynx — iPhone accessories (f6ccps-rz.myshopify.com)</dd></div>
+<div><dt>Store audited</dt><dd>A live Shopify store — iPhone accessories</dd></div>
 <div><dt>Prepared by</dt><dd>Abdul Attaie — Shopify store builder &amp; auditor (Fiverr: a_attaie)</dd></div>
 <div><dt>Audit date</dt><dd>October 14, 2026</dd></div>
 <div><dt>Catalog size</dt><dd>5 products — all 5 product pages deep-checked</dd></div>
 <div><dt>Fulfillment model</dt><dd>Mixed: 1 product stocked in a US warehouse; the rest supplier-fulfilled</dd></div>
-<div><dt>Method</dt><dd>Customer-view storefront walk (homepage, collections, search, every product page, FAQ and policy pages), image-by-image inspection of the product galleries, a claims-vs-reality sweep against how the store actually fulfills orders, and a public catalog-feed price sweep — all re-run live on October 14, 2026. The interactive cart walk is recorded in §4 with the date each step was walked. Backend settings (§9) and the rendered mobile pass (§10) are cited from an owner-access audit of this store on October 13, 2026 and were <strong>not</strong> re-run for this sample — they are marked <strong>N-A (not re-run)</strong> where they appear. On client orders, backend checks unlock at Standard/Premium with collaborator access.</dd></div>
+<div><dt>Method</dt><dd>Customer-view storefront walk (homepage, collections, search, every product page, FAQ and policy pages), image-by-image inspection of the product galleries, a claims-vs-reality sweep against how the store actually fulfills orders, and a public catalog-feed price sweep — all re-run live on October 14, 2026. The interactive cart walk is recorded in §4 with the date each step was walked. Backend settings (§9) and the rendered mobile pass (§10) are cited from a backend-access audit of the store on October 13, 2026 and were <strong>not</strong> re-run for this sample — they are marked <strong>N-A (not re-run)</strong> where they appear. On client orders, backend checks unlock at Standard/Premium with collaborator access.</dd></div>
 </dl>
 
 <!-- ===== EXECUTIVE SUMMARY ===== -->
@@ -100,7 +100,7 @@
 <article class="finding" data-severity="blocker" data-finding="1.1">
 <div class="finding-head"><span class="badge badge-blocker">BLOCKER</span><h3>Finding 1.1 — &ldquo;Fast US Shipping&rdquo; trust row is not true for most of the catalog</h3><button class="toggle" type="button" data-target="f-1-1" aria-expanded="false" aria-controls="f-1-1">Details</button></div>
 <div class="finding-body" id="f-1-1" hidden>
-<p><span class="lbl">Page:</span> Homepage — https://f6ccps-rz.myshopify.com/ · [screenshot: homepage trust row, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> Homepage · [screenshot: homepage trust row, captured Oct 14]</p>
 <p><span class="lbl">Evidence:</span> The homepage trust row reads: <em>&ldquo;Fast US Shipping — Ships quickly from within the US, straight to your door.&rdquo;</em></p>
 <p><span class="lbl">Why it hurts:</span> Only one product (the wireless charger) is stocked in a US warehouse. The cases, screen protector, and bundle are supplier-fulfilled from overseas. A case buyer reads &ldquo;ships from within the US,&rdquo; expects US delivery speed, and gets a longer wait — the classic setup for a dispute and a one-star review.</p>
 <p><span class="lbl">Fix:</span> Replace the storewide row with wording that is true for <strong>every</strong> product — e.g. &ldquo;Tracked shipping on every order — each product page shows its real delivery window&rdquo; — and state per-product delivery reality on the product pages themselves. (Final wording depends on the store&rsquo;s fulfillment model per product; a storewide row may only claim what is true storewide.) <em>Fix slot #4 — Standard/Premium.</em></p>
@@ -116,7 +116,7 @@
 <article class="finding" data-severity="polish" data-finding="2.1">
 <div class="finding-head"><span class="badge badge-polish">POLISH</span><h3>Finding 2.1 — Two overlapping case collections</h3><button class="toggle" type="button" data-target="f-2-1" aria-expanded="false" aria-controls="f-2-1">Details</button></div>
 <div class="finding-body" id="f-2-1" hidden>
-<p><span class="lbl">Page:</span> https://f6ccps-rz.myshopify.com/collections/phone-cases and https://f6ccps-rz.myshopify.com/collections/iphone-17-pro-max-cases · [screenshot: both collection pages, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> Collection pages — Phone Cases and iPhone 17 Pro Max Cases · [screenshot: both collection pages, captured Oct 14]</p>
 <p><span class="lbl">Evidence:</span> The store publishes both collections for the same two cases.</p>
 <p><span class="lbl">Why it matters:</span> Minor. Two near-identical doors to the same products dilute the menu&rsquo;s clarity.</p>
 <p><span class="lbl">Fix:</span> Keep the collection the menu actually uses; retire or merge the other. <em>Polish — outside the fix caps; quoted separately or folded into a page cleanup.</em></p>
@@ -129,16 +129,16 @@
 <article class="finding" data-severity="blocker" data-finding="3.1">
 <div class="finding-head"><span class="badge badge-blocker">BLOCKER</span><h3>Finding 3.1 — Another brand&rsquo;s packaging is shown in the screen protector gallery</h3><button class="toggle" type="button" data-target="f-3-1" aria-expanded="false" aria-controls="f-3-1">Details</button></div>
 <div class="finding-body" id="f-3-1" hidden>
-<p><span class="lbl">Page:</span> https://f6ccps-rz.myshopify.com/products/orrynx-diamond-nano-glass-screen-protector-for-iphone-17-pro-max-17-pro · [screenshot: protector gallery, box-front image, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> Screen protector product page · [screenshot: protector gallery, box-front image, captured Oct 14]</p>
 <p><span class="lbl">Evidence:</span> The protector&rsquo;s gallery includes a retail box printed with <strong>&ldquo;ATB DESIGN&rdquo;</strong> and <strong>&ldquo;ATB ATOUCHBO&rdquo;</strong> branding, complete with that brand&rsquo;s gorilla mascot (box-front shot, gallery image 6). The same branded box photo also appears inside the bundle gallery — that second appearance is cross-referenced at Finding 6.5 and <strong>counted once, here</strong>.</p>
-<p><span class="lbl">Why it hurts:</span> A customer shopping an &ldquo;Orrynx&rdquo; product is shown someone else&rsquo;s brand packaging. It reads as a resold listing, invites &ldquo;is this genuine?&rdquo; doubts, and undercuts every trust element on the page.</p>
+<p><span class="lbl">Why it hurts:</span> A customer shopping this store&rsquo;s product is shown someone else&rsquo;s brand packaging. It reads as a resold listing, invites &ldquo;is this genuine?&rdquo; doubts, and undercuts every trust element on the page.</p>
 <p><span class="lbl">Fix:</span> Re-lead the gallery with photos of the actual protector and install tray without third-party branding; remove the branded box photos from both galleries. <em>Fix slot #9 — Standard/Premium (protector page cleaned).</em></p>
 </div></article>
 
 <article class="finding" data-severity="fix" data-finding="3.2">
 <div class="finding-head"><span class="badge badge-fix">FIX</span><h3>Finding 3.2 — The Blue case page is missing two features the Black case page lists</h3><button class="toggle" type="button" data-target="f-3-2" aria-expanded="false" aria-controls="f-3-2">Details</button></div>
 <div class="finding-body" id="f-3-2" hidden>
-<p><span class="lbl">Page:</span> https://f6ccps-rz.myshopify.com/products/orrynx-shockproof-case-for-iphone-17-pro-max (Blue) vs. https://f6ccps-rz.myshopify.com/products/orrynx-shockproof-case-for-iphone-17-pro-max-black (Black) · [screenshot: both description spec lists side by side, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> Shockproof case product pages — Blue vs. Black · [screenshot: both description spec lists side by side, captured Oct 14]</p>
 <p><span class="lbl">Evidence:</span> Side-by-side comparison of the two case pages (same product, two colors), re-verified in the live catalog data on October 14: the Black page includes <em>&ldquo;Multi-function bracket: alloy lens ring unfolds into a 90-degree phone stand&rdquo;</em> and <em>&ldquo;wireless charging without removing the case.&rdquo;</em> The Blue page has neither line — its MagSafe bullet stops at &ldquo;built-in magnetic ring for MagSafe chargers and accessories.&rdquo;</p>
 <p><span class="lbl">Why it hurts:</span> The built-in stand is this case&rsquo;s signature feature. Blue buyers are shown a weaker product for the same $12.99, and the store&rsquo;s own social content promotes the stand the page never mentions.</p>
 <p><span class="lbl">Fix:</span> Copy the two missing spec lines into the Blue description so both color pages describe the identical product. <em>Fix slot #10 — Standard/Premium (Blue case page cleaned).</em></p>
@@ -161,8 +161,8 @@
 <p><strong>Checks walked, with dates (this sample does not claim steps it did not walk):</strong></p>
 <ul>
 <li><em>Advertised-code sweep — walked October 14, 2026:</em> every page and policy on the storefront was swept for advertised discount codes. Exactly one code is advertised anywhere: WELCOME10. A leftover test code found in an earlier internal pass (FLASH10) appears nowhere — it was removed from the store and from every page that mentioned it (removal verified October 13; absence re-verified in today&rsquo;s sweep).</li>
-<li><em>Code validity — verified October 13, 2026 (owner-access audit):</em> WELCOME10 is a real, active code (10% off a first order).</li>
-<li><em>Interactive cart walk — verified October 13, 2026 (owner-access audit):</em> add to cart from product page and collection page; cart shows correct item, variant and totals; quantity change and item removal work; checkout loads with the express options enabled; shipping rates shown at checkout match the rates in Settings. A fresh interactive re-walk was attempted on October 14 — the cart/checkout pages did not return inside the fetch window, so these steps are carried at their October 13 verification and are <strong>not</strong> claimed as re-walked today.</li>
+<li><em>Code validity — verified October 13, 2026 (backend-access audit):</em> WELCOME10 is a real, active code (10% off a first order).</li>
+<li><em>Interactive cart walk — verified October 13, 2026 (backend-access audit):</em> add to cart from product page and collection page; cart shows correct item, variant and totals; quantity change and item removal work; checkout loads with the express options enabled; shipping rates shown at checkout match the rates in Settings. A fresh interactive re-walk was attempted on October 14 — the cart/checkout pages did not return inside the fetch window, so these steps are carried at their October 13 verification and are <strong>not</strong> claimed as re-walked today.</li>
 <li><em>Payment display — spot-checked October 14:</em> the express payment options displayed on product pages (Shop Pay, Apple Pay, Google Pay) match the payment methods actually enabled; no payment method is advertised that the store does not accept.</li>
 </ul>
 <div class="clean"><strong>No findings in this section.</strong> Cart line items, variants, and totals draw from the same catalog data verified in §5.</div>
@@ -184,7 +184,7 @@
 <article class="finding" data-severity="fix" data-finding="5.1">
 <div class="finding-head"><span class="badge badge-fix">FIX</span><h3>Finding 5.1 — The bundle&rsquo;s saving is stated as three different numbers, and two of them are wrong</h3><button class="toggle" type="button" data-target="f-5-1" aria-expanded="false" aria-controls="f-5-1">Details</button></div>
 <div class="finding-body" id="f-5-1" hidden>
-<p><span class="lbl">Page:</span> https://f6ccps-rz.myshopify.com/products/orrynx-complete-protection-bundle-for-iphone-17-pro-max (plus the cross-sell lines on both case pages and the protector page) · [screenshot: bundle description &ldquo;20% less&rdquo; line and protector cross-sell line, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> Complete Protection Bundle product page (plus the cross-sell lines on both case pages and the protector page) · [screenshot: bundle description &ldquo;20% less&rdquo; line and protector cross-sell line, captured Oct 14]</p>
 <p><span class="lbl">Evidence:</span> The bundle costs $18.99 against $24.98 bought separately — a real saving of <strong>24%</strong>. But the bundle description opens with <em>&ldquo;at 20% less than buying separately,&rdquo;</em> both case pages and the protector page repeat <em>&ldquo;save 20% with the Complete Protection Bundle,&rdquo;</em> and the bundle&rsquo;s own gallery flyers (Finding 6.2) shout <strong>&ldquo;50% OFF.&rdquo;</strong></p>
 <p><span class="lbl">Why it hurts:</span> Three different savings claims for one product means at least two are false at any moment. A customer who does the $6 math finds 24% and trusts none of the numbers.</p>
 <p><span class="lbl">Fix:</span> State one number everywhere — the true one: &ldquo;Save 24% vs buying separately&rdquo; — in the description, the cross-sell lines, and any replacement gallery art. <em>Fix slot #8 — Standard/Premium.</em></p>
@@ -200,7 +200,7 @@
 <article class="finding" data-severity="blocker" data-finding="6.1">
 <div class="finding-head"><span class="badge badge-blocker">BLOCKER</span><h3>Finding 6.1 — Storewide &ldquo;US warehouse / 3–5 day&rdquo; shipping claims that fulfillment doesn&rsquo;t support</h3><button class="toggle" type="button" data-target="f-6-1" aria-expanded="false" aria-controls="f-6-1">Details</button></div>
 <div class="finding-body" id="f-6-1" hidden>
-<p><span class="lbl">Page:</span> Shipping policy — https://f6ccps-rz.myshopify.com/policies/shipping-policy · FAQ page (footer link) · the shipping block printed on every product page · [screenshot: shipping policy text, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> Shipping policy page · FAQ page (footer link) · the shipping block printed on every product page · [screenshot: shipping policy text, captured Oct 14]</p>
 <p><span class="lbl">Evidence (three locations, same claim):</span></p>
 <ul>
 <li>Shipping policy: <em>&ldquo;Orders are shipped from our US warehouse within 1–2 business days… delivery typically takes 3–5 business days.&rdquo;</em></li>
@@ -220,7 +220,7 @@
 <article class="finding" data-severity="blocker" data-finding="6.2">
 <div class="finding-head"><span class="badge badge-blocker">BLOCKER</span><h3>Finding 6.2 — The flyers promise &ldquo;50% OFF&rdquo; — three times each</h3><button class="toggle" type="button" data-target="f-6-2" aria-expanded="false" aria-controls="f-6-2">Details</button></div>
 <div class="finding-body" id="f-6-2" hidden>
-<p><span class="lbl">Page:</span> https://f6ccps-rz.myshopify.com/products/orrynx-complete-protection-bundle-for-iphone-17-pro-max (gallery images 1–2) · [screenshot: both flyers at full size, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> Complete Protection Bundle product page (gallery images 1–2) · [screenshot: both flyers at full size, captured Oct 14]</p>
 <p><span class="lbl">Evidence:</span> Each flyer prints &ldquo;50% OFF&rdquo; three times (<em>&ldquo;SPECIAL OFFER 50% OFF FOR YOU!&rdquo;</em>, <em>&ldquo;BUY NOW AND GET 50% OFF THE CASE&rdquo;</em>, <em>&ldquo;50% OFF iPhone 17 Pro Max Case&rdquo;</em>). The bundle&rsquo;s real saving is 24% (§5).</p>
 <p><span class="lbl">Why it hurts:</span> A fabricated discount on the product&rsquo;s own page is a pricing claim the store cannot defend — to customers, to Shopify, or to a regulator.</p>
 <p><span class="lbl">Fix:</span> Shared gallery fix above — remove both flyers and re-lead with the real product photos; any rebuilt promo card may only claim claims the store can prove, starting with the true 24% saving.</p>
@@ -252,8 +252,8 @@
 <article class="finding" data-severity="blocker" data-finding="6.6">
 <div class="finding-head"><span class="badge badge-blocker">BLOCKER</span><h3>Finding 6.6 — &ldquo;7× Military-Grade&rdquo; and drop-test certification badges with no documentation</h3><button class="toggle" type="button" data-target="f-6-6" aria-expanded="false" aria-controls="f-6-6">Details</button></div>
 <div class="finding-body" id="f-6-6" hidden>
-<p><span class="lbl">Page:</span> Homepage hero + About page — https://f6ccps-rz.myshopify.com/ · both case product pages (gallery badge image) · [screenshot: hero claim + case gallery badge image, captured Oct 14]</p>
-<p><span class="lbl">Evidence:</span> The homepage hero block and the About page claim <em>&ldquo;7× Military-Grade Drop Protection&rdquo;</em>; both case galleries carry a badge image repeating <em>&ldquo;7x Military Grade Protection&rdquo;</em> (gallery file <code>orrynx-black-military.jpg</code> / <code>orrynx-blue-military.jpg</code>), alongside supplier badges presenting drop-test / military-standard certification marks.</p>
+<p><span class="lbl">Page:</span> Homepage hero + About page · both case product pages (gallery badge image) · [screenshot: hero claim + case gallery badge image, captured Oct 14]</p>
+<p><span class="lbl">Evidence:</span> The homepage hero block and the About page claim <em>&ldquo;7× Military-Grade Drop Protection&rdquo;</em>; both case galleries carry a badge image repeating <em>&ldquo;7x Military Grade Protection&rdquo;</em> (the badge image carried in each case gallery), alongside supplier badges presenting drop-test / military-standard certification marks.</p>
 <p><span class="lbl">Reality:</span> the store holds no test report, certification, or supplier documentation for a 7× figure, a military standard, or a drop-test rating. The cases are genuinely reinforced (raised edges, shock-absorbing corners — visible, provable features), but no documented rating exists behind the badges.</p>
 <p><span class="lbl">Why it hurts:</span> Performance ratings are claims a store must be able to prove on demand — to a customer, a platform, or a regulator. An undocumented &ldquo;military-grade&rdquo; multiplier is exactly the kind of claim that gets listings flagged and stores distrusted.</p>
 <p><span class="lbl">Fix:</span> Remove the &ldquo;7×&rdquo; figure and the certification-style badges everywhere; describe only the provable construction (raised 1.5 mm edges, reinforced corners, camera-frame protection). If the supplier ever provides real test documentation, the claim can return — with the document on file. <em>Fix slots #6 (homepage + About text) and #7 (case gallery badge images, both case pages cleaned) — Standard/Premium. A claim is never &ldquo;fixed&rdquo; by writing a bigger one.</em></p>
@@ -262,7 +262,7 @@
 <article class="finding" data-severity="fix" data-finding="6.7">
 <div class="finding-head"><span class="badge badge-fix">FIX</span><h3>Finding 6.7 — The charger&rsquo;s own shipping line conflicts with the storewide shipping text</h3><button class="toggle" type="button" data-target="f-6-7" aria-expanded="false" aria-controls="f-6-7">Details</button></div>
 <div class="finding-body" id="f-6-7" hidden>
-<p><span class="lbl">Page:</span> https://f6ccps-rz.myshopify.com/products/orrynx-15w-magsafe-wireless-charger · [screenshot: charger description shipping line, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> 15W MagSafe Wireless Charger product page · [screenshot: charger description shipping line, captured Oct 14]</p>
 <p><span class="lbl">Evidence:</span> The charger description states <em>&ldquo;Ships from our US warehouse — delivery in 3 to 8 days,&rdquo;</em> while the storewide shipping block printed on the same page (Finding 6.1) promises dispatch in 1–2 business days and delivery in 3–5.</p>
 <p><span class="lbl">Evidence note (why this is a Fix, not a Blocker):</span> the charger <strong>is</strong> US-stocked, so its per-product US-warehouse claim is <strong>true for this product</strong> — verified against the store&rsquo;s fulfillment setup. The defect is the internal contradiction: one page, two different delivery windows.</p>
 <p><span class="lbl">Fix:</span> When Finding 6.1 is rewritten, align the charger page to the single corrected shipping text, keeping its (true) US-stock statement and one consistent window. <em>Fix slot #11 — Premium band (charger page cleaned).</em></p>
@@ -272,11 +272,11 @@
 <!-- ===== §7 ===== -->
 <section class="audit-section" id="s7">
 <h2 class="section-title">§7 — Policy &amp; legal pages</h2>
-<div class="clean"><strong>Privacy policy — re-check documented (no finding):</strong> the privacy policy page (https://f6ccps-rz.myshopify.com/policies/privacy-policy, page &ldquo;Last updated: October 13, 2026&rdquo;) was re-read in full on <strong>October 14, 2026</strong>. The only contact address printed anywhere in it is the <strong>store email, contact.orionx@gmail.com</strong> — no personal email, no home address, no personal phone. An earlier internal pass (October 13) had found the owner&rsquo;s personal data in this auto-generated policy — the classic Shopify trap, since stores generate these pages automatically and owners never re-read them. It was removed the same day; this re-check confirms the removal held. <em>Status: clean.</em></div>
+<div class="clean"><strong>Privacy policy — re-check documented (no finding):</strong> the privacy policy page (page &ldquo;Last updated: October 13, 2026&rdquo;) was re-read in full on <strong>October 14, 2026</strong>. The only contact address printed anywhere in it is the <strong>store&rsquo;s public contact email</strong> — no personal email, no home address, no personal phone. An earlier internal pass (October 13) had found personal data in this auto-generated policy — the classic Shopify trap, since stores generate these pages automatically and owners never re-read them. It was removed the same day; this re-check confirms the removal held. <em>Status: clean.</em></div>
 <article class="finding" data-severity="fix" data-finding="7.1">
 <div class="finding-head"><span class="badge badge-fix">FIX</span><h3>Finding 7.1 — Terms of Service page returns 404</h3><button class="toggle" type="button" data-target="f-7-1" aria-expanded="false" aria-controls="f-7-1">Details</button></div>
 <div class="finding-body" id="f-7-1" hidden>
-<p><span class="lbl">Page:</span> https://f6ccps-rz.myshopify.com/policies/terms-of-service · [screenshot: 404 response, captured Oct 14]</p>
+<p><span class="lbl">Page:</span> Terms of Service page · [screenshot: 404 response, captured Oct 14]</p>
 <p><span class="lbl">Evidence:</span> The Terms of Service URL returns an HTTP 404 — the page was never published. (Re-verified live on October 14, 2026.)</p>
 <p><span class="lbl">Why it hurts:</span> A missing terms page is a small but real trust and compliance gap: it is the document that governs the sale, and its absence is visible to anyone who looks for it — including payment and platform reviewers.</p>
 <p><span class="lbl">Fix:</span> Publish a Terms of Service page matching the store&rsquo;s actual policies (payment, shipping per the corrected Finding 6.1 text, returns per the refund policy). <em>Fix slot #12 — Premium band.</em></p>
@@ -290,25 +290,25 @@
 <article class="finding" data-severity="fix" data-finding="8.1">
 <div class="finding-head"><span class="badge badge-fix">FIX</span><h3>Finding 8.1 — Case products still carry the default vendor name &ldquo;My Store&rdquo;</h3><button class="toggle" type="button" data-target="f-8-1" aria-expanded="false" aria-controls="f-8-1">Details</button></div>
 <div class="finding-body" id="f-8-1" hidden>
-<p><span class="lbl">Page:</span> Both case products — https://f6ccps-rz.myshopify.com/products/orrynx-shockproof-case-for-iphone-17-pro-max and https://f6ccps-rz.myshopify.com/products/orrynx-shockproof-case-for-iphone-17-pro-max-black · [screenshot: catalog data vendor field, captured Oct 14]</p>
-<p><span class="lbl">Evidence:</span> In the store&rsquo;s live catalog data, both case products still carry the vendor value <strong>&ldquo;My Store&rdquo;</strong> — Shopify&rsquo;s default — while the other three products correctly carry &ldquo;Orrynx.&rdquo; The store&rsquo;s admin display name was likewise still the default at the October 13 owner-access audit.</p>
+<p><span class="lbl">Page:</span> Both case products · [screenshot: catalog data vendor field, captured Oct 14]</p>
+<p><span class="lbl">Evidence:</span> In the store&rsquo;s live catalog data, both case products still carry the vendor value <strong>&ldquo;My Store&rdquo;</strong> — Shopify&rsquo;s default — while the other three products correctly carry the store&rsquo;s brand name. The store&rsquo;s admin display name was likewise still the default at the October 13 backend-access audit.</p>
 <p><span class="lbl">Why it hurts:</span> &ldquo;My Store&rdquo; is the fingerprint of an unfinished store. Wherever the vendor/brand field surfaces (catalog feeds, search results, sales channels), it tells customers and platforms the store was never fully set up.</p>
-<p><span class="lbl">Fix:</span> Set the vendor to &ldquo;Orrynx&rdquo; on both case products and confirm the store display name in Settings. <em>Fix slot #13 — Premium band.</em></p>
+<p><span class="lbl">Fix:</span> Set the vendor to the store&rsquo;s brand name on both case products and confirm the store display name in Settings. <em>Fix slot #13 — Premium band.</em></p>
 </div></article>
-<div class="clean"><strong>Checked — clean:</strong> the contact email is the store&rsquo;s business email everywhere it appears — footer, policy pages (re-verified October 14), and product pages; logo and favicon are present and consistent; the About page is about this brand (its one defect is the undocumented claim counted at Finding 6.6). <em>Observation (not a counted finding):</em> the footer carries no social-media links at all — the brand&rsquo;s real Instagram/Facebook accounts exist but are not linked from the store; adding them is a trust improvement the owner can make in minutes.</div>
+<div class="clean"><strong>Checked — clean:</strong> the contact email is the store&rsquo;s business email everywhere it appears — footer, policy pages (re-verified October 14), and product pages; logo and favicon are present and consistent; the About page is about this brand (its one defect is the undocumented claim counted at Finding 6.6). <em>Observation (not a counted finding):</em> the footer carries no social-media links at all — the brand&rsquo;s real Instagram/Facebook accounts exist but are not linked from the store; adding them is a trust improvement that takes minutes to make.</div>
 </section>
 
 <!-- ===== §9 ===== -->
 <section class="audit-section" id="s9">
 <h2 class="section-title">§9 — Backend spot-checks — N-A (not re-run) for this sample</h2>
-<p>Backend settings require store-owner access. This sample&rsquo;s seller is the store&rsquo;s owner, and these items were verified in an owner-access audit of this store on <strong>October 13, 2026</strong>; they were <strong>not</strong> re-opened for this sample, so each is dated, and the section as a whole is marked N-A rather than claimed as freshly run. (On client orders this section runs at Standard/Premium, with collaborator access only — never the owner&rsquo;s password.)</p>
+<p>Backend settings require store-owner access. These items were verified in a backend-access audit of the store on <strong>October 13, 2026</strong>; they were <strong>not</strong> re-opened for this sample, so each is dated, and the section as a whole is marked N-A rather than claimed as freshly run. (On client orders this section runs at Standard/Premium, with collaborator access only — never the owner&rsquo;s password.)</p>
 <ul>
 <li><strong>Inventory sanity (Oct 13):</strong> the charger&rsquo;s sellable stock was corrected to its real US-warehouse count (100 units at the US location) after the supplier-app location was deactivated — removing a five-figure inflated count the supplier app had been adding. Protector: 200 per variant. Bundle: 50 per color. Cases: inventory tracking off (deliberate for supplier-fulfilled products).</li>
 <li><strong>Discount list (Oct 13):</strong> WELCOME10 is the only active advertised code; the leftover FLASH10 test code was removed (see §4).</li>
 <li><strong>Abandoned-checkout email flow (Oct 13):</strong> enabled.</li>
 <li><strong>Shipping zones/rates in Settings (Oct 13):</strong> match checkout behavior. It is the policy <em>text</em> — not the rates — that conflicts with fulfillment (Finding 6.1).</li>
 <li><strong>Published &amp; in collections (re-verified Oct 14, public):</strong> all 5 products are published to the Online Store and sit in their menu collections — confirmed in today&rsquo;s storefront walk and catalog-feed sweep.</li>
-<li><strong>Backend observation (Oct 14, public catalog data):</strong> the two case products carry no SKU. Not a customer-facing defect (no SKU text is shown to customers); recorded here as hygiene for the owner&rsquo;s own records.</li>
+<li><strong>Backend observation (Oct 14, public catalog data):</strong> the two case products carry no SKU. Not a customer-facing defect (no SKU text is shown to customers); recorded here as backend hygiene.</li>
 </ul>
 <div class="clean"><strong>No backend findings are counted in this sample&rsquo;s totals</strong> — the section is reported for completeness, with its dates attached.</div>
 </section>
@@ -316,7 +316,7 @@
 <!-- ===== §10 ===== -->
 <section class="audit-section" id="s10">
 <h2 class="section-title">§10 — Mobile pass — N-A (not re-run) for this sample</h2>
-<p>A rendered mobile pass (tap targets, sticky-bar overlap, gallery swipe, variant selector, one-hand checkout) was run in the October 13 owner-access audit and found no purchase-blocking defects. It was <strong>not</strong> re-run for this October 14 sample, so this section is honestly marked N-A rather than re-claimed. Every finding in §§1–8 was verified on the live storefront in this audit; on client orders the mobile pass (§§1–5 repeated on a mobile viewport) is part of every tier, Basic included.</p>
+<p>A rendered mobile pass (tap targets, sticky-bar overlap, gallery swipe, variant selector, one-hand checkout) was run in the October 13 backend-access audit and found no purchase-blocking defects. It was <strong>not</strong> re-run for this October 14 sample, so this section is honestly marked N-A rather than re-claimed. Every finding in §§1–8 was verified on the live storefront in this audit; on client orders the mobile pass (§§1–5 repeated on a mobile viewport) is part of every tier, Basic included.</p>
 </section>
 
 <!-- ===== §11 ===== -->
@@ -373,7 +373,7 @@
 <!-- ===== CLOSING ===== -->
 <section class="panel" id="closing">
 <h2>Closing</h2>
-<p>This sample is a real audit of my own store, run with the same checklist, the same severity rules, and the same &ldquo;never fix a claim with a bigger claim&rdquo; rule I apply to client work — including the findings I&rsquo;d rather not show you. On a client order, the deliverable is this report (Basic), this report plus the implemented fixes in your tier&rsquo;s slots (Standard), or the full fix pass with a re-check report and a 14-day follow-up (Premium). No sales promises — a clean, consistent store is easier to trust, and easier to buy from.</p>
+<p>This sample is a real audit of a live Shopify store, run with the same checklist, the same severity rules, and the same &ldquo;never fix a claim with a bigger claim&rdquo; rule I apply to client work — findings left in, including the ones a store would rather not show. On a client order, the deliverable is this report (Basic), this report plus the implemented fixes in your tier&rsquo;s slots (Standard), or the full fix pass with a re-check report and a 14-day follow-up (Premium). No sales promises — a clean, consistent store is easier to trust, and easier to buy from.</p>
 <p>— Abdul Attaie, Shopify store builder &amp; auditor · Fiverr: a_attaie · Sample prepared October 14, 2026</p>
 <hr>
 <p><strong>This page is a sample report viewer. It does not run a live analysis of your store.</strong></p>
@@ -394,7 +394,7 @@
 </div>
 
 <footer><div class="wrap">
-<p>Sample report — Orrynx is the author&rsquo;s own store.</p>
+<p>Sample report — a real audit of a live Shopify store, published as a work sample by Mainly Web Studio.</p>
 <p><a href="../">← Back to Demo Showcase home</a> · <a href="../store/">Demo store</a> · <a href="../hvac/">Demo HVAC site</a></p>
 </div></footer>
 <script src="app.js"></script>
